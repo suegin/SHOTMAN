@@ -1,5 +1,6 @@
 #include "DxLib.h"
 #include "game.h"
+#include "SceneBase.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -16,6 +17,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// 描画先を裏画面にする
 	SetDrawScreen(DX_SCREEN_BACK);
+
+	SceneBase* sceneBase;
 
 	// ゲームループ
 	while (ProcessMessage() == 0)	// Windowsが行う処理を待つ

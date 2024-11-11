@@ -1,2 +1,10 @@
-﻿  main.cpp
-  SHOTMAN.vcxproj -> C:\Users\fko2447006\source\repos\SHOTMAN\x64\Debug\SHOTMAN.exe
+﻿  TitleScene.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,8): error C2059: 構文エラー: '文字列'
+  (ソース ファイル 'TitleScene.cpp' をコンパイルしています)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,12): error C2143: 構文エラー: ';' が '{' の前にありません。
+  (ソース ファイル 'TitleScene.cpp' をコンパイルしています)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,12): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+  (ソース ファイル 'TitleScene.cpp' をコンパイルしています)
+  

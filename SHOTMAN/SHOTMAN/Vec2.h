@@ -6,19 +6,19 @@
 class Vec2
 {
 public:
-	float x;
-	float y;
+	float X;
+	float Y;
 
 public:
 	Vec2() 
 	{
-		x = 0.0f;
-		y = 0.0f;
+		X = 0.0f;
+		Y = 0.0f;
 	}
 
 	Vec2(float _x, float _y) :
-		x(_x),
-		y(_y)
+		X(_x),
+		Y(_y)
 	{
 	}
 
@@ -30,49 +30,49 @@ public:
 	// ↓の例だとオーバーロードしたいのは"+="演算子
 	Vec2 operator+=(const Vec2& vec)
 	{
-		x += vec.x;
-		y += vec.y;
+		X += vec.X;
+		Y += vec.Y;
 		return *this;
 	}
 	Vec2 operator+(const Vec2& vec) const
 	{
-		Vec2 temp{ x + vec.x, y + vec.y };
+		Vec2 temp{ X + vec.X, Y + vec.Y };
 		return temp;
 	}
 
 	Vec2 operator-=(const Vec2& vec)
 	{
-		x -= vec.x;
-		y -= vec.y;
+		X -= vec.X;
+		Y -= vec.Y;
 		return *this;
 	}
 	Vec2 operator-(const Vec2& vec) const
 	{
-		Vec2 temp{ x - vec.x, y - vec.y };
+		Vec2 temp{ X - vec.X, Y - vec.Y };
 		return temp;
 	}
 
 	Vec2 operator*=(float scale)
 	{
-		x *= scale;
-		y *= scale;
+		X *= scale;
+		Y *= scale;
 		return *this;
 	}
 	Vec2 operator*(float scale) const
 	{
-		Vec2 temp{ x * scale, y * scale };
+		Vec2 temp{ X * scale, Y * scale };
 		return temp;
 	}
 
 	Vec2 operator/=(float scale)
 	{
-		x /= scale;
-		y /= scale;
+		X /= scale;
+		Y /= scale;
 		return *this;
 	}
 	Vec2 operator/(float scale) const
 	{
-		Vec2 temp{ x / scale, y / scale };
+		Vec2 temp{ X / scale, Y / scale };
 		return temp;
 	}
 
@@ -81,7 +81,7 @@ public:
 	// 2つの物体間の距離を求める　等に使用できる
 	float Length() const
 	{
-		return sqrtf(x * x + y * y);
+		return sqrtf(X * X + Y * Y);
 	}
 
 	// 自身の長さを1にする(正規化)
@@ -93,8 +93,8 @@ public:
 			// ゼロベクトルはそのまま
 			return;
 		}
-		x /= len;
-		y /= len;
+		X /= len;
+		Y /= len;
 	}
 
 	// 自身の長さを1にしたベクトルの取得
