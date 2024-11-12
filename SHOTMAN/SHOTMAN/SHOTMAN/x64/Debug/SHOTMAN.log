@@ -1,9 +1,7 @@
 ﻿  GameScene.cpp
   main.cpp
   Pad.cpp
+C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\main.cpp(21,14): warning C4101: 'sceneBase': ローカル変数は 1 度も使われていません。
   TitleScene.cpp
   コードを生成中...
-/ソースファイル/GameScene.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\GameScene.cpp':No such file or directory
-/ソースファイル/main.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\main.cpp':No such file or directory
-/ソースファイル/Pad.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\Pad.cpp':No such file or directory
-/ソースファイル/TitleScene.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\TitleScene.cpp':No such file or directory
+  SHOTMAN.vcxproj -> C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe

@@ -16,4 +16,3 @@ public:
 private:
 	set<_base2DGameObject> m_gameObjects;
 };
-
