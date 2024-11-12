@@ -12,9 +12,9 @@ public:
 	virtual ~_base2DGameObject();
 
 	/*ƒƒ“ƒoŠÖ”*/
-	virtual Init() {};
-	virtual Update() {};
-	virtual Draw() {};
+	virtual void Init() {};
+	virtual void Update() {};
+	virtual void Draw() {};
 
 protected:
 	Vec2 m_pos{ 0.0f, 0.0f };

@@ -1,10 +1,9 @@
-﻿  TitleScene.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,8): error C2059: 構文エラー: '文字列'
-  (ソース ファイル 'TitleScene.cpp' をコンパイルしています)
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,12): error C2143: 構文エラー: ';' が '{' の前にありません。
-  (ソース ファイル 'TitleScene.cpp' をコンパイルしています)
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,12): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
-  (ソース ファイル 'TitleScene.cpp' をコンパイルしています)
-  
+﻿  GameScene.cpp
+  main.cpp
+  Pad.cpp
+  TitleScene.cpp
+  コードを生成中...
+/ソースファイル/GameScene.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\GameScene.cpp':No such file or directory
+/ソースファイル/main.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\main.cpp':No such file or directory
+/ソースファイル/Pad.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\Pad.cpp':No such file or directory
+/ソースファイル/TitleScene.cpp(1,1): error C1083: ソース ファイルを開けません。'ソースファイル\TitleScene.cpp':No such file or directory

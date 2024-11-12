@@ -139,16 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="ソースファイル\GameScene.cpp" />
+    <ClCompile Include="ソースファイル\main.cpp" />
+    <ClCompile Include="ソースファイル\Pad.cpp" />
+    <ClCompile Include="ソースファイル\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h" />
-    <ClInclude Include="GameScene.h" />
-    <ClInclude Include="_sceneBase.h" />
-    <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="Vec2.h" />
-    <ClInclude Include="_base2DGameObject.h" />
+    <ClInclude Include="ヘッダーファイル\game.h" />
+    <ClInclude Include="ヘッダーファイル\GameScene.h" />
+    <ClInclude Include="ヘッダーファイル\Pad.h" />
+    <ClInclude Include="ヘッダーファイル\_sceneBase.h" />
+    <ClInclude Include="ヘッダーファイル\TitleScene.h" />
+    <ClInclude Include="ヘッダーファイル\Vec2.h" />
+    <ClInclude Include="ヘッダーファイル\_base2DGameObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
