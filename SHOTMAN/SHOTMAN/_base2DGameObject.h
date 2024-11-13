@@ -9,7 +9,7 @@ public:
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
-	virtual ~_base2DGameObject();
+	virtual ~_base2DGameObject() {};
 
 	/*メンバ関数*/
 	virtual void Init() {};

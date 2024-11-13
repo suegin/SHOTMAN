@@ -19,8 +19,8 @@ SceneManager::SceneKind SceneGame::SceneTransition()
 {
 	if (Pad::IsTrigger(PAD_INPUT_1))
 	{
-		return SceneManager::SceneKind();
+		return SceneManager::SceneKind::kSceneTitle;
 	}
 
-	return SceneManager::SceneKind();
+	return SceneManager::SceneKind::kSceneGame;
 }

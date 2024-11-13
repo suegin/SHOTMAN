@@ -1,13 +1,2 @@
-﻿  main.cpp
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\main.cpp(21,14): warning C4101: 'sceneBase': ローカル変数は 1 度も使われていません。
-  Pad.cpp
-  SceneGame.cpp
-  SceneManager.cpp
-  SceneTitle.cpp
-  コードを生成中...
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\SceneTitle.cpp(24,1): warning C4715: 'SceneTitle::SceneTransition': 値を返さないコントロール パスがあります。
-SceneManager.obj : error LNK2019: 未解決の外部シンボル "public: virtual __cdecl _sceneBase::~_sceneBase(void)" (??1_sceneBase@@UEAA@XZ) が関数 "int `public: __cdecl SceneGame::SceneGame(void)'::`1'::dtor$0" (?dtor$0@?0???0SceneGame@@QEAA@XZ@4HA) で参照されました
-SceneManager.obj : error LNK2001: 外部シンボル "public: virtual void __cdecl _sceneBase::Init(void)" (?Init@_sceneBase@@UEAAXXZ) は未解決です
-SceneManager.obj : error LNK2001: 外部シンボル "public: virtual void __cdecl _sceneBase::Update(void)" (?Update@_sceneBase@@UEAAXXZ) は未解決です
-SceneManager.obj : error LNK2001: 外部シンボル "public: virtual void __cdecl _sceneBase::Draw(void)" (?Draw@_sceneBase@@UEAAXXZ) は未解決です
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe : fatal error LNK1120: 4 件の未解決の外部参照
+﻿  SceneTitle.cpp
+  SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe

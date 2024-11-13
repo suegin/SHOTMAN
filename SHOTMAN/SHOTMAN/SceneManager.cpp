@@ -1,6 +1,8 @@
 #include "SceneManager.h"
 #include "DxLib.h"
 
+#include "Pad.h"
+
 #include "SceneTitle.h"
 #include "SceneGame.h"
 
@@ -46,8 +48,44 @@ void SceneManager::Init()
 
 void SceneManager::Update()
 {
+	Pad::Update();
+
+	SceneKind nextKind = m_kind;
+
+	switch (m_kind)
+	{
+	case SceneManager::kSceneTitle:
+		nextKind = m_pSceneTitle->SceneTransition();
+		break;
+	case SceneManager::kSceneGame:
+		nextKind = m_pSceneGame->SceneTransition();
+		break;
+	case SceneManager::kSceneNum:
+	default:
+		break;
+	}
+
+	if (nextKind != m_kind)
+	{
+		m_kind = nextKind;
+
+		Init();
+	}
 }
 
 void SceneManager::Draw()
 {
+	switch (m_kind)
+	{
+	case SceneManager::kSceneTitle:
+		m_pSceneTitle->Draw();
+		break;
+	case SceneManager::kSceneGame:
+		m_pSceneGame->Draw();
+		break;
+	case SceneManager::kSceneNum:
+		break;
+	default:
+		break;
+	}
 }

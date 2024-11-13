@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include "game.h"
-#include "_sceneBase.h"
+
+#include "SceneManager.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -18,7 +19,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// 描画先を裏画面にする
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	_sceneBase* sceneBase;
+	SceneManager* pScene = new SceneManager();
+
+	pScene->Init();
 
 	// ゲームループ
 	while (ProcessMessage() == 0)	// Windowsが行う処理を待つ
@@ -30,6 +33,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 
 		// ここにゲームの処理を書く
+		pScene->Update();
+
+		pScene->Draw();
 
 		// 画面の切り替わりを持つ
 		ScreenFlip();
@@ -40,6 +46,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		}
 	}
+
+	delete pScene;
 
 	DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
 

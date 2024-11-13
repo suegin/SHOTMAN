@@ -3,10 +3,10 @@
 class _sceneBase
 {
 public:
-	virtual ~_sceneBase();
+	virtual ~_sceneBase() {};
 
-	virtual void Init();
-	virtual void Update();
-	virtual void Draw();
+	virtual void Init() abstract;
+	virtual void Update() abstract;
+	virtual void Draw() abstract;
 };
 

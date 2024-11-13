@@ -2,7 +2,6 @@
 #include "_sceneBase.h"
 #include "_base2DGameObject.h"
 #include <set>
-
 #include "SceneManager.h"
 
 using namespace std;
@@ -11,9 +10,9 @@ class SceneGame : public _sceneBase
 {
 public:
 	/*ƒƒ“ƒoŠÖ”*/
-	void Init();
-	void Update();
-	void Draw();
+	void Init() override;
+	void Update() override;
+	void Draw() override;
 
 	SceneManager::SceneKind SceneTransition();
 
