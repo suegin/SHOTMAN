@@ -18,6 +18,5 @@ public:
 
 protected:
 	Vec2 m_pos{ 0.0f, 0.0f };
-	int m_drawHandle;
 };
 

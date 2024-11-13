@@ -28,7 +28,7 @@ void SceneTitle::Draw()
 
 	int fadeAlpha = 0;
 
-	float fadeRate = static_cast<float>(m_fadeFrameCount) / 30;
+	float fadeRate = static_cast<float>((m_fadeFrameCount) / 30.f);
 	fadeRate = 1.0f - fadeRate;
 	fadeAlpha = 255 * fadeRate;
 

@@ -3,6 +3,8 @@
 #include "_base2DGameObject.h"
 #include <set>
 #include "SceneManager.h"
+#include "Player.h"
+#include <string>
 
 using namespace std;
 
@@ -17,6 +19,7 @@ public:
 	SceneManager::SceneKind SceneTransition();
 
 private:
-	set<_base2DGameObject> m_gameObject;
+	set<_base2DGameObject*> m_gameObjects;
+	Player* m_player;
 };
 

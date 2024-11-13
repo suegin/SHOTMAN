@@ -55,6 +55,7 @@ void SceneManager::Update()
 	switch (m_kind)
 	{
 	case SceneManager::kSceneTitle:
+		m_pSceneTitle->Update();
 		nextKind = m_pSceneTitle->SceneTransition();
 		break;
 	case SceneManager::kSceneGame:

@@ -141,18 +141,22 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pad.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="_baseCollision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
     <ClInclude Include="Pad.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="_base2DGameObject.h" />
+    <ClInclude Include="_baseCollision.h" />
     <ClInclude Include="_sceneBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
