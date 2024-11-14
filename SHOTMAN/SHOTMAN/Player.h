@@ -24,5 +24,6 @@ private:
 
 	int m_animFrame;
 
+	Vec2 m_pos;
 };
 

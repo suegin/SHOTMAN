@@ -3,24 +3,31 @@
 
 #include "Pad.h"
 
+SceneGame::~SceneGame()
+{
+	if (m_pPlayer != nullptr)
+	{
+		delete m_pPlayer;
+		m_pPlayer = nullptr;
+	}
+}
+
 void SceneGame::Init()
 {
-	m_player = new Player();
-	m_gameObjects.insert(m_player);
+	m_pPlayer = new Player();
+	m_gameObjects.insert(m_pPlayer);
+
+	m_pPlayer->Init();
 }
 
 void SceneGame::Update()
 {
-
-	for (_base2DGameObject* temp : m_gameObjects)
-	{
-		temp->Update();
-	}
+	m_pPlayer->Update();
 }
 
 void SceneGame::Draw()
 {
-	m_player->Draw();
+	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
 }
 

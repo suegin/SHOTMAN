@@ -11,6 +11,8 @@ using namespace std;
 class SceneGame : public _sceneBase
 {
 public:
+	~SceneGame();
+
 	/*ƒƒ“ƒoŠÖ”*/
 	void Init() override;
 	void Update() override;
@@ -20,6 +22,6 @@ public:
 
 private:
 	set<_base2DGameObject*> m_gameObjects;
-	Player* m_player;
+	Player* m_pPlayer;
 };
 
