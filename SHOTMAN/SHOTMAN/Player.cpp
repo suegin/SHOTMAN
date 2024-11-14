@@ -27,5 +27,5 @@ void Player::Update()
 
 void Player::Draw()
 {
-	DrawBox(100, 100, 200, 200, 0xffffff, true);
+	DrawBox(640-16, 360-16, 640+16, 360+16, 0xffffff, true);
 }

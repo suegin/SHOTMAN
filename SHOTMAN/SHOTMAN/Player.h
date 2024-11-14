@@ -22,7 +22,7 @@ private:
 	int m_graphHandleDamage;
 	int m_graphHandleDeath;
 
-
+	int m_animFrame;
 
 };
 
