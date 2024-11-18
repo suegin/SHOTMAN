@@ -2,6 +2,7 @@
 #include "DxLib.h"
 #include "game.h"
 #include <cassert>
+#include "Pad.h"
 
 namespace
 {
@@ -10,13 +11,14 @@ namespace
 	constexpr int kGraphHeight = 128;
 
 	//アニメーションのコマ数
-	constexpr int kIdleAnimNum = 11;
+	constexpr int kIdleAnimNum = 6;
+	constexpr int kRunAnimNum = 10;
 
 	//アニメーションの1コマのフレーム数
-	constexpr int kSingleAnimFrame = 5;
+	constexpr int kSingleAnimFrame = 6;
 
 	//キャラクターの移動速度
-	constexpr float kSpeed = 2.0f;
+	constexpr float kSpeed = 5.0f;
 
 	//地面の高さ
 
@@ -50,30 +52,73 @@ Player::~Player()
 
 void Player::Init()
 {
-	m_graphHandleIdle = LoadGraph("image/Player/Idle_2.png");
+	m_graphHandleIdle = LoadGraph("image/Player/Idle.png");
+	m_graphHandleRun = LoadGraph("image/Player/Run.png");
 	assert(m_graphHandleIdle != -1);
+	m_state = 0;
+	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kIdleAnimNum);
+	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kRunAnimNum);
 }
 
 void Player::Update()
 {
-	//アニメーションの更新
-	++m_animFrame;
-	int totalFrame = kIdleAnimNum * kSingleAnimFrame;
+	////アニメーションの更新
+	//++m_animFrame;
+	//int totalFrame = kIdleAnimNum * kSingleAnimFrame;
 
-	//アニメーションの合計フレーム数を超えたら最初に戻す
-	if (m_animFrame >= totalFrame)
+	////アニメーションの合計フレーム数を超えたら最初に戻す
+	//if (m_animFrame >= totalFrame)
+	//{
+	//	m_animFrame = 0;
+	//}
+
+	if (m_state == 0)
 	{
-		m_animFrame = 0;
+		m_animIdle.Update();
+	}
+	else if (m_state == 1)
+	{
+		m_animRun.Update();
+	}
+	else if (m_state == 2)
+	{
+		m_animRun.Update();
+	}
+
+	if (Pad::IsPress(PAD_INPUT_RIGHT))
+	{
+		m_pos.X += kSpeed;
+		m_state = 1;
+	}
+	else if (Pad::IsPress(PAD_INPUT_LEFT))
+	{
+		m_pos.X -= kSpeed;
+		m_state = 2;
+	}
+	else
+	{
+		m_state = 0;
 	}
 }
 
 void Player::Draw()
 {
-	int animNo = m_animFrame / kSingleAnimFrame;
-	
-
-	DrawRectGraph(static_cast<int>(m_pos.X - kGraphWidth / 2), static_cast<int>(m_pos.Y - kGraphHeight),
-		animNo * kGraphWidth, 0, kGraphWidth, kGraphHeight,
-		m_graphHandleIdle, true);
+	//int animNo = m_animFrame / kSingleAnimFrame;
+	//
+	//DrawRectGraph(static_cast<int>(m_pos.X - kGraphWidth / 2), static_cast<int>(m_pos.Y - kGraphHeight),
+	//	animNo * kGraphWidth, 0, kGraphWidth, kGraphHeight,
+	//	m_graphHandleIdle, true);
 	//DrawBox(640-16, 360-16, 640+16, 360+16, 0xffffff, true);
+	if (m_state == 0)
+	{
+		m_animIdle.Play(m_pos,false);
+	}
+	else if (m_state == 1)
+	{
+		m_animRun.Play(m_pos,false);
+	}
+	else if (m_state == 2)
+	{
+		m_animRun.Play(m_pos, true);
+	}
 }
