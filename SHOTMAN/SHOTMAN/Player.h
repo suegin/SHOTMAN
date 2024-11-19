@@ -4,6 +4,7 @@
 #include "Vec2.h"
 #include "Animation.h"
 
+
 class Player : public _base2DGameObject, public _baseCollision
 {
 public:
@@ -23,12 +24,10 @@ private:
 	int m_graphHandleDamage;
 	int m_graphHandleDeath;
 
-	//アニメーションのフレームを数える
-	int m_animFrame;
-
 	//プレイヤーの状態
 	bool m_isRun;
 	bool m_isJump;
+	bool m_isShot;
 
 	//左を向いているか
 	bool m_isDirLeft;
@@ -41,5 +40,6 @@ private:
 	Animation m_animIdle;
 	Animation m_animRun;
 	Animation m_animJump;
+	Animation m_animShot;
 };
 

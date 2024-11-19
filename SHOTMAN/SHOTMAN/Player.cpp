@@ -14,14 +14,13 @@ namespace
 	constexpr int kIdleAnimNum = 6;
 	constexpr int kRunAnimNum = 10;
 	constexpr int kJumpAnimNum = 10;
+	constexpr int kShotAnimNum = 4;
 
 	//アニメーションの1コマのフレーム数
 	constexpr int kSingleAnimFrame = 6;
 
 	//キャラクターの移動速度
 	constexpr float kSpeed = 5.0f;
-
-	//地面の高さ
 
 	//ジャンプ処理
 	constexpr float kJumpPower = -8.0f; //ジャンプの加速
@@ -42,7 +41,6 @@ Player::Player() :
 	m_graphHandleDamage(-1),
 	m_graphHandleDeath(-1),
 	m_pos(Game::kScreenWidth * 0.5f, 640),
-	m_animFrame(0),
 	m_isRun(false),
 	m_isJump(false),
 	m_isDirLeft(false),
@@ -63,10 +61,13 @@ void Player::Init()
 	assert(m_graphHandleRun != -1);
 	m_graphHandleJump = LoadGraph("image/Player/Jump.png");
 	assert(m_graphHandleJump);
+	m_graphHandleShot = LoadGraph("image/Player/Shot.png");
+	assert(m_graphHandleShot);
 
-	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kIdleAnimNum);
-	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kRunAnimNum);
-	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kJumpAnimNum);
+	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, kSingleAnimFrame, kIdleAnimNum);
+	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight,kSingleAnimFrame, kRunAnimNum);
+	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, kSingleAnimFrame, kJumpAnimNum);
+	m_animShot.Init(m_graphHandleShot, kGraphWidth, kGraphHeight, kSingleAnimFrame, kShotAnimNum);
 }
 
 void Player::Update()
@@ -120,8 +121,13 @@ void Player::Update()
 			m_isJump = false;
 			m_jumpSpeed = 0.0f;
 			m_pos.Y = 640;
-			m_animFrame = 0;
+			m_animJump.ResetAnimFrame();
 		}
+	}
+
+	if (Pad::IsTrigger(PAD_INPUT_1))
+	{
+
 	}
 }
 

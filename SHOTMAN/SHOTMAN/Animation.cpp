@@ -1,12 +1,12 @@
 #include "Animation.h"
 #include "DxLib.h"
 
-void Animation::Init(int drawHandle, int graphW, int graphH, int animFrame, int animSingleFrame, int animNum)
+void Animation::Init(int drawHandle, int graphW, int graphH, int animSingleFrame, int animNum)
 {
+	m_animFrame = 0;
 	m_drawHandle = drawHandle;
 	m_graphW = graphW;
 	m_graphH = graphH;
-	m_animFrame = animFrame;
 	m_animSingleFrame = animSingleFrame;
 	m_animNum = animNum;
 
@@ -15,7 +15,7 @@ void Animation::Init(int drawHandle, int graphW, int graphH, int animFrame, int 
 
 void Animation::Update()
 {
-	++m_animFrame;
+	m_animFrame++;
 
 	//アニメーションの合計フレーム数を超えたら最初に戻す
 	if (m_animFrame >= m_totalFrame)

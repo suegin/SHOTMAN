@@ -1,11 +1,13 @@
 #pragma once
 #include "Vec2.h"
+
 class Animation
 {
 public:
-	void Init(int drawHandle, int graphW, int graphH, int animFrame, int animSingleFrame, int animNum);
+	void Init(int drawHandle, int graphW, int graphH, int animSingleFrame, int animNum);
 	void Update();
 	void Play(Vec2 pos, bool isLeft);
+	void ResetAnimFrame() { m_animFrame = 0; }
 
 private:
 	int m_drawHandle;
