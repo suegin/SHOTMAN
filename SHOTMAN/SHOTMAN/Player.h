@@ -23,16 +23,23 @@ private:
 	int m_graphHandleDamage;
 	int m_graphHandleDeath;
 
+	//アニメーションのフレームを数える
 	int m_animFrame;
 
-	int m_state;
-
+	//プレイヤーの状態
 	bool m_isRun;
+	bool m_isJump;
 
+	//左を向いているか
 	bool m_isDirLeft;
+	
+	float m_jumpSpeed;
 
 	Vec2 m_pos;
+
+	//再生するアニメーション
 	Animation m_animIdle;
 	Animation m_animRun;
+	Animation m_animJump;
 };
 

@@ -39,7 +39,7 @@ void SceneTitle::Draw()
 
 SceneManager::SceneKind SceneTitle::SceneTransition()
 {
-	if (Pad::IsTrigger(PAD_INPUT_1))
+	if (Pad::IsTrigger(PAD_INPUT_5))
 	{
 		return SceneManager::SceneKind::kSceneGame;
 	}

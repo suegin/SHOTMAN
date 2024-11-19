@@ -13,6 +13,7 @@ namespace
 	//アニメーションのコマ数
 	constexpr int kIdleAnimNum = 6;
 	constexpr int kRunAnimNum = 10;
+	constexpr int kJumpAnimNum = 10;
 
 	//アニメーションの1コマのフレーム数
 	constexpr int kSingleAnimFrame = 6;
@@ -40,8 +41,12 @@ Player::Player() :
 	m_graphHandleShot(-1),
 	m_graphHandleDamage(-1),
 	m_graphHandleDeath(-1),
-	m_pos(Game::kScreenWidth * 0.5f, Game::kScreenHeight * 0.5f),
-	m_animFrame(0)
+	m_pos(Game::kScreenWidth * 0.5f, 640),
+	m_animFrame(0),
+	m_isRun(false),
+	m_isJump(false),
+	m_isDirLeft(false),
+	m_jumpSpeed(0.0)
 {
 }
 
@@ -53,72 +58,85 @@ Player::~Player()
 void Player::Init()
 {
 	m_graphHandleIdle = LoadGraph("image/Player/Idle.png");
-	m_graphHandleRun = LoadGraph("image/Player/Run.png");
 	assert(m_graphHandleIdle != -1);
-	m_state = 0;
+	m_graphHandleRun = LoadGraph("image/Player/Run.png");
+	assert(m_graphHandleRun != -1);
+	m_graphHandleJump = LoadGraph("image/Player/Jump.png");
+	assert(m_graphHandleJump);
+
 	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kIdleAnimNum);
 	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kRunAnimNum);
+	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, m_animFrame, kSingleAnimFrame, kJumpAnimNum);
 }
 
 void Player::Update()
 {
-	////アニメーションの更新
-	//++m_animFrame;
-	//int totalFrame = kIdleAnimNum * kSingleAnimFrame;
-
-	////アニメーションの合計フレーム数を超えたら最初に戻す
-	//if (m_animFrame >= totalFrame)
-	//{
-	//	m_animFrame = 0;
-	//}
-
-	if (m_state == 0)
+    if (m_isJump)
+	{
+		m_animJump.Update();
+	}
+	else if (m_isRun)
+	{
+		m_animRun.Update();
+	}
+	else
 	{
 		m_animIdle.Update();
 	}
-	else if (m_state == 1)
-	{
-		m_animRun.Update();
-	}
-	else if (m_state == 2)
-	{
-		m_animRun.Update();
-	}
-
+	
 	if (Pad::IsPress(PAD_INPUT_RIGHT))
 	{
 		m_pos.X += kSpeed;
-		m_state = 1;
+		m_isRun = true;
+		m_isDirLeft = false;
 	}
 	else if (Pad::IsPress(PAD_INPUT_LEFT))
 	{
 		m_pos.X -= kSpeed;
-		m_state = 2;
+		m_isRun = true;
+		m_isDirLeft = true;
 	}
 	else
 	{
-		m_state = 0;
+		m_isRun = false;
+	}
+	
+	
+	if (Pad::IsTrigger(PAD_INPUT_2))
+	{
+		if (!m_isJump)
+		{
+			m_isJump = true;
+			m_jumpSpeed = kJumpPower;
+		}
+	}
+
+	if (m_isJump)
+	{
+		m_pos.Y += m_jumpSpeed;
+		m_jumpSpeed += kGravity;
+		if (m_pos.Y >= 640)
+		{
+			m_isJump = false;
+			m_jumpSpeed = 0.0f;
+			m_pos.Y = 640;
+			m_animFrame = 0;
+		}
 	}
 }
 
 void Player::Draw()
 {
-	//int animNo = m_animFrame / kSingleAnimFrame;
-	//
-	//DrawRectGraph(static_cast<int>(m_pos.X - kGraphWidth / 2), static_cast<int>(m_pos.Y - kGraphHeight),
-	//	animNo * kGraphWidth, 0, kGraphWidth, kGraphHeight,
-	//	m_graphHandleIdle, true);
-	//DrawBox(640-16, 360-16, 640+16, 360+16, 0xffffff, true);
-	if (m_state == 0)
+	if (m_isJump)
 	{
-		m_animIdle.Play(m_pos,false);
+		m_animJump.Play(m_pos, m_isDirLeft);
 	}
-	else if (m_state == 1)
+	else if (m_isRun)
 	{
-		m_animRun.Play(m_pos,false);
+		m_animRun.Play(m_pos, m_isDirLeft);
 	}
-	else if (m_state == 2)
+	else
 	{
-		m_animRun.Play(m_pos, true);
+		m_animIdle.Play(m_pos, m_isDirLeft);
 	}
 }
