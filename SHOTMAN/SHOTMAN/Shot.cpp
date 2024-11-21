@@ -18,18 +18,13 @@ void Shot::Init()
 
 void Shot::Update()
 {
-	if (Pad::IsTrigger(PAD_INPUT_1))
-	{
-		for (int i = 0; i < kShotAllNum; ++i)
-		{
-			if (m_shotFrag[i] == false)
-			{
-				m_shotFrag[i] = true;
-			}
-		}
-	}
+	
 }
 
 void Shot::Draw()
 {
+	if (m_shotFrag)
+	{
+		DrawCircle(m_pos.X, m_pos.Y, 100, 0xffffff, true);
+	}
 }

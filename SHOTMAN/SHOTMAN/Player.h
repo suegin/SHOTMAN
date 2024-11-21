@@ -3,6 +3,7 @@
 #include "_baseCollision.h"
 #include "Vec2.h"
 #include "Animation.h"
+#include "Shot.h"
 
 class Player : public _base2DGameObject, public _baseCollision
 {
@@ -40,5 +41,7 @@ private:
 	Animation m_animRun;
 	Animation m_animJump;
 	Animation m_animShot;
+
+	Shot m_shot[3];
 };
 

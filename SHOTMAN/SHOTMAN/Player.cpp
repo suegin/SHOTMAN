@@ -131,7 +131,19 @@ void Player::Update()
 
 	if (Pad::IsTrigger(PAD_INPUT_1))
 	{
-		
+		for (int i = 0; i < kShotAllNum; ++i)
+		{
+			if (!m_shot[i].m_shotFrag)
+			{
+				m_shot[i].m_shotFrag = true;
+				m_shot[i].m_pos
+			}
+
+			if (m_shot[i].m_shotFrag)
+			{
+				
+			}
+		}
 	}
 }
 
@@ -149,4 +161,6 @@ void Player::Draw()
 	{
 		m_animIdle.Play(m_pos, m_isDirLeft);
 	}
+
+	
 }
