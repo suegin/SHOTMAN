@@ -4,7 +4,6 @@
 #include "Vec2.h"
 #include "Animation.h"
 
-
 class Player : public _base2DGameObject, public _baseCollision
 {
 public:

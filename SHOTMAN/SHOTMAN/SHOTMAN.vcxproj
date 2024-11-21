@@ -146,6 +146,7 @@
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="Shot.cpp" />
     <ClCompile Include="_baseCollision.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="Shot.h" />
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="_base2DGameObject.h" />
     <ClInclude Include="_baseCollision.h" />

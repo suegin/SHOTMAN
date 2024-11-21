@@ -55,12 +55,16 @@ Player::~Player()
 
 void Player::Init()
 {
+	//‘Ò‹@
 	m_graphHandleIdle = LoadGraph("image/Player/Idle.png");
 	assert(m_graphHandleIdle != -1);
+	//ˆÚ“®
 	m_graphHandleRun = LoadGraph("image/Player/Run.png");
 	assert(m_graphHandleRun != -1);
+	//ƒWƒƒƒ“ƒv
 	m_graphHandleJump = LoadGraph("image/Player/Jump.png");
 	assert(m_graphHandleJump);
+	//”­ŽË
 	m_graphHandleShot = LoadGraph("image/Player/Shot.png");
 	assert(m_graphHandleShot);
 
@@ -127,7 +131,7 @@ void Player::Update()
 
 	if (Pad::IsTrigger(PAD_INPUT_1))
 	{
-
+		
 	}
 }
 
