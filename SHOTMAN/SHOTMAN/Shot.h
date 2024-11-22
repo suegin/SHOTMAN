@@ -7,10 +7,12 @@ namespace
 	constexpr int kShotAllNum = 3;
 }
 
+class Player;
+
 class Shot : public _base2DGameObject
 {
 public:
-	Shot();
+	Shot(Player& player);
 	~Shot();
 
 	void Init();
@@ -21,5 +23,7 @@ public:
 
 private:
 	int m_graphHandleShot;
+
+	Player& m_player;
 };
 

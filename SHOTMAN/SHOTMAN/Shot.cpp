@@ -1,10 +1,13 @@
 #include "Shot.h"
 #include "DxLib.h"
 #include "Pad.h"
+#include "game.h"
+#include "Player.h"
 
-Shot::Shot():
+Shot::Shot(Player& player):
 	m_graphHandleShot(-1),
-	m_shotFrag{}
+	m_shotFrag{},
+	m_player(player)
 {
 }
 
@@ -18,13 +21,17 @@ void Shot::Init()
 
 void Shot::Update()
 {
-	
+	if (m_shotFrag)
+	{
+		if (m_pos.X >= Game::kScreenWidth ||
+			m_pos.X <= 0)
+		{
+			m_shotFrag = false;
+		}
+	}
 }
 
 void Shot::Draw()
 {
-	if (m_shotFrag)
-	{
-		DrawCircle(m_pos.X, m_pos.Y, 100, 0xffffff, true);
-	}
+		DrawCircle(m_pos.X, m_pos.Y, 10, 0xffffff, true);
 }

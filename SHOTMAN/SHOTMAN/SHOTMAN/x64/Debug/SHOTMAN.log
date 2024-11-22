@@ -1,14 +1,4 @@
-﻿  Animation.cpp
-  main.cpp
-  Pad.cpp
-  Player.cpp
-  SceneGame.cpp
-  SceneManager.cpp
-  SceneTitle.cpp
-  Shot.cpp
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\SceneTitle.cpp(33,18): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Shot.cpp(42,28): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Shot.cpp(42,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  _baseCollision.cpp
-  コードを生成中...
-  SHOTMAN.vcxproj -> C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
+﻿  Shot.cpp
+C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Shot.cpp(39,28): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Shot.cpp(39,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe

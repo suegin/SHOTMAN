@@ -49,10 +49,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	delete pScene;
 
-	DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
-
-	WaitKey();				// キー入力待ち
-
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 
 	return 0;				// ソフトの終了 

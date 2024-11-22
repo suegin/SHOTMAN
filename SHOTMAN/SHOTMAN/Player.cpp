@@ -3,6 +3,7 @@
 #include "game.h"
 #include <cassert>
 #include "Pad.h"
+#include "Shot.h"
 
 namespace
 {
@@ -43,13 +44,23 @@ Player::Player() :
 	m_pos(Game::kScreenWidth * 0.5f, 640),
 	m_isRun(false),
 	m_isJump(false),
+	m_isShot(false),
 	m_isDirLeft(false),
-	m_jumpSpeed(0.0)
+	m_jumpSpeed(0.0f),
+	m_shotDirSpeed(0.0f)
 {
+	for (auto& shot : m_shot)
+	{
+		shot = new Shot(*this);
+	}
 }
 
 Player::~Player()
 {
+	for (auto& shot : m_shot)
+	{
+		delete shot;
+	}
 	DeleteGraph(m_graphHandleIdle);
 }
 
@@ -76,7 +87,11 @@ void Player::Init()
 
 void Player::Update()
 {
-    if (m_isJump)
+	if (m_isShot)
+	{
+		m_animShot.Update();
+	}
+    else if (m_isJump)
 	{
 		m_animJump.Update();
 	}
@@ -129,27 +144,58 @@ void Player::Update()
 		}
 	}
 
+	for (int i = 0; i < kShotAllNum; ++i)
+	{
+		m_shot[i]->Update();
+	}
+
 	if (Pad::IsTrigger(PAD_INPUT_1))
 	{
+		m_isShot = true;
 		for (int i = 0; i < kShotAllNum; ++i)
 		{
-			if (!m_shot[i].m_shotFrag)
+			if (!m_shot[i]->m_shotFrag)
 			{
-				m_shot[i].m_shotFrag = true;
-				m_shot[i].m_pos
-			}
+				m_shot[i]->m_shotFrag = true;
 
-			if (m_shot[i].m_shotFrag)
-			{
-				
+				m_shot[i]->m_pos.X = m_pos.X + 15;
+				m_shot[i]->m_pos.Y = m_pos.Y - kGraphHeight * 0.5f + 25;
+
+				if (m_isDirLeft)
+				{
+					
+				}
+
+				break;
 			}
+		}
+	}
+	else
+	{
+		m_isShot = false;
+	}
+
+	for (int i = 0; i < kShotAllNum; ++i)
+	{
+		if (m_shot[i]->m_shotFrag)
+		{
+			if (m_shot[i]->m_pos.X >= Game::kScreenWidth ||
+				m_shot[i]->m_pos.X <= 0)
+			{
+				m_shot[i]->m_shotFrag = false;
+			}
+			m_shot[i]->Draw();
 		}
 	}
 }
 
 void Player::Draw()
 {
-	if (m_isJump)
+	if (m_isShot)
+	{
+		m_animShot.Play(m_pos, m_isDirLeft);
+	}
+	else if (m_isJump)
 	{
 		m_animJump.Play(m_pos, m_isDirLeft);
 	}

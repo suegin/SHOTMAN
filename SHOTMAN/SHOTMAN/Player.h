@@ -15,6 +15,8 @@ public:
 	void Update() override;
 	void Draw() override;
 
+	bool GetDir() const { return m_isDirLeft; }
+
 private:
 	/*グラフィックハンドル*/
 	int m_graphHandleIdle;
@@ -34,6 +36,8 @@ private:
 	
 	float m_jumpSpeed;
 
+	float m_shotDirSpeed;
+
 	Vec2 m_pos;
 
 	//再生するアニメーション
@@ -42,6 +46,6 @@ private:
 	Animation m_animJump;
 	Animation m_animShot;
 
-	Shot m_shot[3];
+	Shot* m_shot[3];
 };
 
