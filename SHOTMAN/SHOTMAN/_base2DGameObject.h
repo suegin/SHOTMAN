@@ -16,8 +16,7 @@ public:
 	virtual void Update() {};
 	virtual void Draw() {};
 
-	Vec2 m_pos{ 0.0f, 0.0f };
 protected:
-	
+	Vec2 m_pos{ 0.0f, 0.0f };
 };
 

@@ -46,6 +46,13 @@ void Shot::Draw()
 		DrawCircle(m_pos.X, m_pos.Y, 10, 0xffffff, true);
 }
 
+void Shot::SetPos(const Vec2 setPos)
+{
+	m_pos = setPos;
+
+	return;
+}
+
 void Shot::SetDir(bool setDir)
 {
 	m_isDirLeft = setDir;

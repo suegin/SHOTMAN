@@ -158,8 +158,8 @@ void Player::Update()
 			{
 				m_shot[i]->m_shotFrag = true;
 
-				m_shot[i]->m_pos.X = m_pos.X + 15;
-				m_shot[i]->m_pos.Y = m_pos.Y - kGraphHeight * 0.5f + 25;
+				m_shot[i]->SetPos(Vec2(m_pos.X + 15.0f, m_pos.Y));
+				m_shot[i]->SetPos(Vec2(m_pos.X, m_pos.Y - kGraphHeight * 0.5f + 25));
 
 				if (m_isDirLeft)
 				{
@@ -179,8 +179,8 @@ void Player::Update()
 	{
 		if (m_shot[i]->m_shotFrag)
 		{
-			if (m_shot[i]->m_pos.X >= Game::kScreenWidth ||
-				m_shot[i]->m_pos.X <= 0)
+			if (m_shot[i]->GetPos().X >= Game::kScreenWidth ||
+				m_shot[i]->GetPos().X <= 0)
 			{
 				m_shot[i]->m_shotFrag = false;
 			}

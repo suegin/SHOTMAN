@@ -12,6 +12,9 @@ public:
 	void Update();
 	void Draw();
 
+	Vec2 GetPos()const { return m_pos; }
+
+	void SetPos(const Vec2 setPos);
 	void SetDir(bool setDir);
 
 	bool m_shotFrag;
