@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Fade.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pad.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -148,9 +149,11 @@
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Shot.cpp" />
     <ClCompile Include="_baseCollision.cpp" />
+    <ClCompile Include="_baseEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Fade.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="Pad.h" />
     <ClInclude Include="Player.h" />
@@ -161,6 +164,7 @@
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="_base2DGameObject.h" />
     <ClInclude Include="_baseCollision.h" />
+    <ClInclude Include="_baseEnemy.h" />
     <ClInclude Include="_sceneBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

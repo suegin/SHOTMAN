@@ -5,6 +5,11 @@
 #include "Animation.h"
 #include "Shot.h"
 
+namespace
+{
+	constexpr int kShotAllNum = 3;
+}
+
 class Player : public _base2DGameObject, public _baseCollision
 {
 public:
@@ -46,6 +51,6 @@ private:
 	Animation m_animJump;
 	Animation m_animShot;
 
-	Shot* m_shot[3];
+	Shot* m_shot[kShotAllNum];
 };
 

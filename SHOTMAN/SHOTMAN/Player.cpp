@@ -51,7 +51,7 @@ Player::Player() :
 {
 	for (auto& shot : m_shot)
 	{
-		shot = new Shot(*this);
+		shot = new Shot();
 	}
 }
 
@@ -163,7 +163,7 @@ void Player::Update()
 
 				if (m_isDirLeft)
 				{
-					
+					m_shot[i]->SetDir(m_isDirLeft);
 				}
 
 				break;

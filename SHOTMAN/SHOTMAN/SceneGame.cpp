@@ -23,12 +23,14 @@ void SceneGame::Init()
 void SceneGame::Update()
 {
 	m_pPlayer->Update();
+	m_fade.Update();
 }
 
 void SceneGame::Draw()
 {
 	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
+	m_fade.Draw();
 }
 
 SceneManager::SceneKind SceneGame::SceneTransition()

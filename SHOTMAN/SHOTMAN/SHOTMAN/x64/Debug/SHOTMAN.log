@@ -1,4 +1,4 @@
-﻿  Shot.cpp
-C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Shot.cpp(39,28): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Shot.cpp(39,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+﻿  SceneGame.cpp
+  SceneManager.cpp
+  コードを生成中...
   SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe

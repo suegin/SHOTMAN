@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "Player.h"
 #include <string>
+#include "Fade.h"
 
 using namespace std;
 
@@ -23,5 +24,6 @@ public:
 private:
 	set<_base2DGameObject*> m_gameObjects;
 	Player* m_pPlayer;
+	Fade m_fade;
 };
 
