@@ -1,6 +1,8 @@
 #pragma once
 #include "Vec2.h"
 
+class Player;
+
 class Animation
 {
 public:
@@ -17,5 +19,7 @@ private:
 	int m_graphH;
 	int m_animNum;
 	int m_totalFrame;
+
+	Player* m_pPlayer;
 };
 

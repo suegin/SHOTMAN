@@ -21,6 +21,7 @@ public:
 	void Draw() override;
 
 	bool GetDir() const { return m_isDirLeft; }
+	bool GetShot() const { return m_isShot; }
 
 private:
 	/*グラフィックハンドル*/

@@ -1,5 +1,7 @@
+#include "Player.h"
 #include "Animation.h"
 #include "DxLib.h"
+#include <memory>
 
 void Animation::Init(int drawHandle, int graphW, int graphH, int animSingleFrame, int animNum)
 {
@@ -15,6 +17,15 @@ void Animation::Init(int drawHandle, int graphW, int graphH, int animSingleFrame
 
 void Animation::Update()
 {
+	if (m_pPlayer.GetShot())
+	{
+		for (int i = 0; i < 24; ++i)
+		{
+			continue;
+		}
+		return;
+	}
+
 	m_animFrame++;
 
 	//アニメーションの合計フレーム数を超えたら最初に戻す
