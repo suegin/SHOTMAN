@@ -23,6 +23,17 @@ public:
 	bool GetDir() const { return m_isDirLeft; }
 	bool GetShot() const { return m_isShot; }
 
+public:
+	enum PlayerState
+	{
+		kIdle,
+		kRun,
+		kJump,
+		kShot,
+		kDamage,
+		kDeath
+	};
+
 private:
 	/*グラフィックハンドル*/
 	int m_graphHandleIdle;

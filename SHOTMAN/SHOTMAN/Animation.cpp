@@ -3,6 +3,14 @@
 #include "DxLib.h"
 #include <memory>
 
+Animation::Animation()
+{
+}
+
+Animation::~Animation()
+{
+}
+
 void Animation::Init(int drawHandle, int graphW, int graphH, int animSingleFrame, int animNum)
 {
 	m_animFrame = 0;
@@ -17,15 +25,6 @@ void Animation::Init(int drawHandle, int graphW, int graphH, int animSingleFrame
 
 void Animation::Update()
 {
-	if (m_pPlayer.GetShot())
-	{
-		for (int i = 0; i < 24; ++i)
-		{
-			continue;
-		}
-		return;
-	}
-
 	m_animFrame++;
 
 	//アニメーションの合計フレーム数を超えたら最初に戻す
@@ -35,10 +34,18 @@ void Animation::Update()
 	}
 }
 
-void Animation::Play(Vec2 pos, bool isLeft)
+void Animation::Play(Vec2 pos, bool isLeft, bool isShot)
 {
-	int animNo = m_animFrame / m_animSingleFrame;
-	DrawRectGraph(static_cast<int>(pos.X - m_graphW / 2), static_cast<int>(pos.Y - m_graphH),
-		animNo * m_graphW, 0, m_graphW, m_graphH,
-		m_drawHandle, true, isLeft);
+	if (isShot)
+	{
+		
+	}
+	else
+	{
+		int animNo = m_animFrame / m_animSingleFrame;
+		DrawRectGraph(static_cast<int>(pos.X - m_graphW / 2), static_cast<int>(pos.Y - m_graphH),
+			animNo * m_graphW, 0, m_graphW, m_graphH,
+			m_drawHandle, true, isLeft);
+	}
+	
 }

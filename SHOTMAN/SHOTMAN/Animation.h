@@ -6,9 +6,12 @@ class Player;
 class Animation
 {
 public:
+	Animation();
+	~Animation();
+
 	void Init(int drawHandle, int graphW, int graphH, int animSingleFrame, int animNum);
 	void Update();
-	void Play(Vec2 pos, bool isLeft);
+	void Play(Vec2 pos, bool isLeft, bool isShot);
 	void ResetAnimFrame() { m_animFrame = 0; }
 
 private:
@@ -19,7 +22,5 @@ private:
 	int m_graphH;
 	int m_animNum;
 	int m_totalFrame;
-
-	Player* m_pPlayer;
 };
 

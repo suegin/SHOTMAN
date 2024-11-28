@@ -19,6 +19,7 @@ namespace
 
 	//アニメーションの1コマのフレーム数
 	constexpr int kSingleAnimFrame = 6;
+	constexpr int kShotSingleAnimFrame = 2;
 
 	//キャラクターの移動速度
 	constexpr float kSpeed = 5.0f;
@@ -62,6 +63,9 @@ Player::~Player()
 		delete shot;
 	}
 	DeleteGraph(m_graphHandleIdle);
+	DeleteGraph(m_graphHandleRun);
+	DeleteGraph(m_graphHandleJump);
+	DeleteGraph(m_graphHandleShot);
 }
 
 void Player::Init()
@@ -82,7 +86,7 @@ void Player::Init()
 	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, kSingleAnimFrame, kIdleAnimNum);
 	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight,kSingleAnimFrame, kRunAnimNum);
 	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, kSingleAnimFrame, kJumpAnimNum);
-	m_animShot.Init(m_graphHandleShot, kGraphWidth, kGraphHeight, kSingleAnimFrame, kShotAnimNum);
+	m_animShot.Init(m_graphHandleShot, kGraphWidth, kGraphHeight, kShotSingleAnimFrame, kShotAnimNum);
 }
 
 void Player::Update()
@@ -170,10 +174,6 @@ void Player::Update()
 			}
 		}
 	}
-	else
-	{
-		m_isShot = false;
-	}
 
 	for (int i = 0; i < kShotAllNum; ++i)
 	{
@@ -193,19 +193,20 @@ void Player::Draw()
 {
 	if (m_isShot)
 	{
-		m_animShot.Play(m_pos, m_isDirLeft);
+		m_animShot.Play(m_pos, m_isDirLeft, m_isShot);
+		m_isShot = false;
 	}
 	else if (m_isJump)
 	{
-		m_animJump.Play(m_pos, m_isDirLeft);
+		m_animJump.Play(m_pos, m_isDirLeft, m_isShot);
 	}
 	else if (m_isRun)
 	{
-		m_animRun.Play(m_pos, m_isDirLeft);
+		m_animRun.Play(m_pos, m_isDirLeft, m_isShot);
 	}
 	else
 	{
-		m_animIdle.Play(m_pos, m_isDirLeft);
+		m_animIdle.Play(m_pos, m_isDirLeft, m_isShot);
 	}
 
 	
