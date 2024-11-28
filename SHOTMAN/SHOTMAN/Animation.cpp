@@ -34,18 +34,10 @@ void Animation::Update()
 	}
 }
 
-void Animation::Play(Vec2 pos, bool isLeft, bool isShot)
+void Animation::Play(Vec2 pos, bool isLeft)
 {
-	if (isShot)
-	{
-		
-	}
-	else
-	{
 		int animNo = m_animFrame / m_animSingleFrame;
 		DrawRectGraph(static_cast<int>(pos.X - m_graphW / 2), static_cast<int>(pos.Y - m_graphH),
 			animNo * m_graphW, 0, m_graphW, m_graphH,
 			m_drawHandle, true, isLeft);
-	}
-	
 }

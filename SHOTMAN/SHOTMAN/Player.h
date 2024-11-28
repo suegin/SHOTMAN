@@ -24,6 +24,7 @@ public:
 	bool GetShot() const { return m_isShot; }
 
 public:
+	//プレイヤーのステータス
 	enum PlayerState
 	{
 		kIdle,
@@ -53,9 +54,7 @@ private:
 	
 	float m_jumpSpeed;
 
-	float m_shotDirSpeed;
-
-	Vec2 m_pos;
+	PlayerState m_playerState;
 
 	//再生するアニメーション
 	Animation m_animIdle;

@@ -11,7 +11,7 @@ public:
 
 	void Init(int drawHandle, int graphW, int graphH, int animSingleFrame, int animNum);
 	void Update();
-	void Play(Vec2 pos, bool isLeft, bool isShot);
+	void Play(Vec2 pos, bool isLeft);
 	void ResetAnimFrame() { m_animFrame = 0; }
 
 private:

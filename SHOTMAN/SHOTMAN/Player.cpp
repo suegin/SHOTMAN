@@ -33,22 +33,25 @@ namespace
 
 	//プレイヤーの初期HP
 	constexpr int kMacHp = 5;
+
+	//プレイヤーの初期位置
+	constexpr int kPlayerInitPosX = 100;
+	constexpr int kPlayerInitPosY = 640;
 }
 
 Player::Player() :
+	m_playerState(kIdle),
 	m_graphHandleIdle(-1),
 	m_graphHandleRun(-1),
 	m_graphHandleJump(-1),
 	m_graphHandleShot(-1),
 	m_graphHandleDamage(-1),
 	m_graphHandleDeath(-1),
-	m_pos(Game::kScreenWidth * 0.5f, 640),
 	m_isRun(false),
 	m_isJump(false),
 	m_isShot(false),
 	m_isDirLeft(false),
-	m_jumpSpeed(0.0f),
-	m_shotDirSpeed(0.0f)
+	m_jumpSpeed(0.0f)
 {
 	for (auto& shot : m_shot)
 	{
@@ -87,6 +90,10 @@ void Player::Init()
 	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight,kSingleAnimFrame, kRunAnimNum);
 	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, kSingleAnimFrame, kJumpAnimNum);
 	m_animShot.Init(m_graphHandleShot, kGraphWidth, kGraphHeight, kShotSingleAnimFrame, kShotAnimNum);
+
+	//プレイヤーのの位置の初期化
+	m_pos.X = kPlayerInitPosX;
+	m_pos.Y = kPlayerInitPosY;
 }
 
 void Player::Update()
@@ -110,8 +117,8 @@ void Player::Update()
 	
 	if (Pad::IsPress(PAD_INPUT_RIGHT))
 	{
+		m_playerState = kRun;
 		m_pos.X += kSpeed;
-		m_isRun = true;
 		m_isDirLeft = false;
 	}
 	else if (Pad::IsPress(PAD_INPUT_LEFT))
@@ -122,14 +129,14 @@ void Player::Update()
 	}
 	else
 	{
-		m_isRun = false;
+		m_playerState = kIdle;
 	}
-	
 	
 	if (Pad::IsTrigger(PAD_INPUT_2))
 	{
 		if (!m_isJump)
 		{
+			m_playerState = kJump;
 			m_isJump = true;
 			m_jumpSpeed = kJumpPower;
 		}
@@ -141,6 +148,7 @@ void Player::Update()
 		m_jumpSpeed += kGravity;
 		if (m_pos.Y >= 640)
 		{
+			m_playerState = kIdle;
 			m_isJump = false;
 			m_jumpSpeed = 0.0f;
 			m_pos.Y = 640;
@@ -193,20 +201,20 @@ void Player::Draw()
 {
 	if (m_isShot)
 	{
-		m_animShot.Play(m_pos, m_isDirLeft, m_isShot);
+		m_animShot.Play(m_pos, m_isDirLeft);
 		m_isShot = false;
 	}
 	else if (m_isJump)
 	{
-		m_animJump.Play(m_pos, m_isDirLeft, m_isShot);
+		m_animJump.Play(m_pos, m_isDirLeft);
 	}
 	else if (m_isRun)
 	{
-		m_animRun.Play(m_pos, m_isDirLeft, m_isShot);
+		m_animRun.Play(m_pos, m_isDirLeft);
 	}
 	else
 	{
-		m_animIdle.Play(m_pos, m_isDirLeft, m_isShot);
+		m_animIdle.Play(m_pos, m_isDirLeft);
 	}
 
 	
