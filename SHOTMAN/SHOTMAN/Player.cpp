@@ -97,24 +97,29 @@ void Player::Init()
 }
 
 void Player::Update()
-{
-	if (m_isShot)
+{	
+	switch (m_playerState)
 	{
-		m_animShot.Update();
-	}
-    else if (m_isJump)
-	{
-		m_animJump.Update();
-	}
-	else if (m_isRun)
-	{
-		m_animRun.Update();
-	}
-	else
-	{
+	case Player::kIdle:
 		m_animIdle.Update();
+		break;
+	case Player::kRun:
+		m_animRun.Update();
+		break;
+	case Player::kJump:
+		m_animJump.Update();
+		break;
+	case Player::kShot:
+		m_animShot.Update();
+		break;
+	case Player::kDamage:
+		break;
+	case Player::kDeath:
+		break;
+	default:
+		break;
 	}
-	
+
 	if (Pad::IsPress(PAD_INPUT_RIGHT))
 	{
 		m_playerState = kRun;
@@ -123,8 +128,8 @@ void Player::Update()
 	}
 	else if (Pad::IsPress(PAD_INPUT_LEFT))
 	{
+		m_playerState = kRun;
 		m_pos.X -= kSpeed;
-		m_isRun = true;
 		m_isDirLeft = true;
 	}
 	else
@@ -163,7 +168,6 @@ void Player::Update()
 
 	if (Pad::IsTrigger(PAD_INPUT_1))
 	{
-		m_isShot = true;
 		for (int i = 0; i < kShotAllNum; ++i)
 		{
 			if (!m_shot[i]->m_shotFrag)
@@ -199,23 +203,25 @@ void Player::Update()
 
 void Player::Draw()
 {
-	if (m_isShot)
+	switch (m_playerState)
 	{
-		m_animShot.Play(m_pos, m_isDirLeft);
-		m_isShot = false;
-	}
-	else if (m_isJump)
-	{
-		m_animJump.Play(m_pos, m_isDirLeft);
-	}
-	else if (m_isRun)
-	{
-		m_animRun.Play(m_pos, m_isDirLeft);
-	}
-	else
-	{
+	case Player::kIdle:
 		m_animIdle.Play(m_pos, m_isDirLeft);
+		break;
+	case Player::kRun:
+		m_animRun.Play(m_pos, m_isDirLeft);
+		break;
+	case Player::kJump:
+		m_animJump.Play(m_pos, m_isDirLeft);
+		break;
+	case Player::kShot:
+		m_animShot.Play(m_pos, m_isDirLeft);
+		break;
+	case Player::kDamage:
+		break;
+	case Player::kDeath:
+		break;
+	default:
+		break;
 	}
-
-	
 }
