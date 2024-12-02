@@ -47,6 +47,7 @@ Player::Player() :
 	m_graphHandleShot(-1),
 	m_graphHandleDamage(-1),
 	m_graphHandleDeath(-1),
+	m_isAction(false),
 	m_isRun(false),
 	m_isJump(false),
 	m_isShot(false),
@@ -97,45 +98,22 @@ void Player::Init()
 }
 
 void Player::Update()
-{	
-	switch (m_playerState)
-	{
-	case Player::kIdle:
-		m_animIdle.Update();
-		break;
-	case Player::kRun:
-		m_animRun.Update();
-		break;
-	case Player::kJump:
-		m_animJump.Update();
-		break;
-	case Player::kShot:
-		m_animShot.Update();
-		break;
-	case Player::kDamage:
-		break;
-	case Player::kDeath:
-		break;
-	default:
-		break;
-	}
+{
+	//現在のプレイヤーのステートを取得
+	m_playerState = GetPlayerState();
 
-	if (Pad::IsPress(PAD_INPUT_RIGHT))
-	{
-		m_playerState = kRun;
-		m_pos.X += kSpeed;
-		m_isDirLeft = false;
-	}
-	else if (Pad::IsPress(PAD_INPUT_LEFT))
-	{
-		m_playerState = kRun;
-		m_pos.X -= kSpeed;
-		m_isDirLeft = true;
-	}
-	else
-	{
-		m_playerState = kIdle;
-	}
+	//ステートによってアニメーションの変更
+	AnimUpdate(m_playerState);
+
+	/*平行移動*/
+	//速度の更新
+	VelocityUpdate();
+
+	//移動処理
+	m_pos += m_velocity;
+
+	//ジャンプ
+
 	
 	if (Pad::IsTrigger(PAD_INPUT_2))
 	{
@@ -143,6 +121,7 @@ void Player::Update()
 		{
 			m_playerState = kJump;
 			m_isJump = true;
+			m_isAction = true;
 			m_jumpSpeed = kJumpPower;
 		}
 	}
@@ -155,6 +134,7 @@ void Player::Update()
 		{
 			m_playerState = kIdle;
 			m_isJump = false;
+			m_isAction = false;
 			m_jumpSpeed = 0.0f;
 			m_pos.Y = 640;
 			m_animJump.ResetAnimFrame();
@@ -173,6 +153,7 @@ void Player::Update()
 			if (!m_shot[i]->m_shotFrag)
 			{
 				m_shot[i]->m_shotFrag = true;
+				m_isAction = true;
 
 				m_shot[i]->SetPos(Vec2(m_pos.X + 15.0f, m_pos.Y));
 				m_shot[i]->SetPos(Vec2(m_pos.X, m_pos.Y - kGraphHeight * 0.5f + 25));
@@ -195,6 +176,7 @@ void Player::Update()
 				m_shot[i]->GetPos().X <= 0)
 			{
 				m_shot[i]->m_shotFrag = false;
+				m_isAction = false;
 			}
 			m_shot[i]->Draw();
 		}
@@ -202,6 +184,38 @@ void Player::Update()
 }
 
 void Player::Draw()
+{
+	//アニメーション再生
+	AnimDraw(m_playerState);
+
+}
+
+void Player::AnimUpdate(PlayerState state)
+{
+	switch (m_playerState)
+	{
+	case Player::kIdle:
+		m_animIdle.Update();
+		break;
+	case Player::kRun:
+		m_animRun.Update();
+		break;
+	case Player::kJump:
+		m_animJump.Update();
+		break;
+	case Player::kShot:
+		m_animShot.Update();
+		break;
+	case Player::kDamage:
+		break;
+	case Player::kDeath:
+		break;
+	default:
+		break;
+	}
+}
+
+void Player::AnimDraw(PlayerState state)
 {
 	switch (m_playerState)
 	{
@@ -224,4 +238,49 @@ void Player::Draw()
 	default:
 		break;
 	}
+}
+
+void Player::VelocityUpdate()
+{
+	//PADフラグチェック
+	bool IsRightPress = Pad::IsPress(PAD_INPUT_RIGHT);
+	bool IsLeftPress = Pad::IsPress(PAD_INPUT_LEFT);
+
+	//右速度
+	if (IsRightPress)
+	{
+		m_velocity.X = kSpeed;
+		m_isDirLeft = false;
+		m_isAction = true;
+	}
+	//左速度
+	if (IsLeftPress)
+	{
+		m_velocity.X = -kSpeed;
+		m_isDirLeft = true;
+		m_isAction = true;
+	}
+	//押されていない
+	if (!IsRightPress && !IsLeftPress)
+	{
+		m_velocity.X = 0;
+	}
+}
+
+Player::PlayerState Player::GetPlayerState()
+{
+	PlayerState state;
+
+	//フラグ出し
+	bool isJump = (m_pos.Y != 640);//ジャンプしているか
+	bool isWalk = (m_velocity.X != 0);//移動しているか
+
+	//Jump
+	if (isJump) { return PlayerState::kJump; }
+	//待機
+	if (!isJump && !isWalk) { return PlayerState::kIdle; }
+	//Walk
+	if (!isJump && isWalk) { return PlayerState::kRun; }
+
+	return PlayerState::kIdle;
 }

@@ -1,1 +1,3 @@
-﻿LINK : fatal error LNK1168: ファイル C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe を開いて書き込むことができません。
+﻿  Player.cpp
+C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(277,14): warning C4101: 'state': ローカル変数は 1 度も使われていません。
+  SHOTMAN.vcxproj -> C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
