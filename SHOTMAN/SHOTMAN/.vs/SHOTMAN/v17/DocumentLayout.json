@@ -1,109 +1,109 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\",
+  "WorkspaceRootPath": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Shot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\AnimationManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:AnimationManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Shot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Shot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\AnimationManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:AnimationManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Fade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_base2DGameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_base2DGameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:_base2DGameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Pad.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneTitle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneTitle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Pad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:_baseEnemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseCollision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseCollision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:_baseCollision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_sceneBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_sceneBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:_sceneBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Fade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Vec2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Vec2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:Vec2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -118,11 +118,11 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "AnimationManager.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\AnimationManager.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\AnimationManager.h",
               "RelativeDocumentMoniker": "AnimationManager.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\AnimationManager.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\AnimationManager.h",
               "RelativeToolTip": "AnimationManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -130,11 +130,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Enemy.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.cpp",
               "RelativeDocumentMoniker": "Enemy.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.cpp",
               "RelativeToolTip": "Enemy.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -144,9 +144,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Enemy.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Enemy.h",
               "RelativeToolTip": "Enemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -156,9 +156,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Fade.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.cpp",
               "RelativeDocumentMoniker": "Fade.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.cpp",
               "RelativeToolTip": "Fade.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -168,9 +168,9 @@
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "Fade.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.h",
               "RelativeDocumentMoniker": "Fade.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Fade.h",
               "RelativeToolTip": "Fade.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -180,59 +180,63 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Shot.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.cpp",
               "RelativeDocumentMoniker": "Shot.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.cpp",
               "RelativeToolTip": "Shot.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAIAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAqwC8AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-21T02:46:41.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Shot.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.h",
-              "RelativeDocumentMoniker": "Shot.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.h",
-              "RelativeToolTip": "Shot.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-21T02:43:47.273Z"
+              "WhenOpened": "2024-11-21T02:46:41.63Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Animation.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.cpp",
-              "RelativeDocumentMoniker": "Animation.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.cpp",
-              "RelativeToolTip": "Animation.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-18T09:03:28.296Z"
+              "Title": "Shot.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.h",
+              "RelativeDocumentMoniker": "Shot.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Shot.h",
+              "RelativeToolTip": "Shot.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-21T02:43:47.273Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "Animation.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.cpp",
+              "RelativeDocumentMoniker": "Animation.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.cpp",
+              "RelativeToolTip": "Animation.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-18T09:03:28.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Animation.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.h",
               "RelativeDocumentMoniker": "Animation.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Animation.h",
               "RelativeToolTip": "Animation.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-18T09:00:10.063Z"
+              "WhenOpened": "2024-11-18T09:00:10.063Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp",
               "RelativeDocumentMoniker": "Player.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp",
               "RelativeToolTip": "Player.cpp",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAgwHIAAAAHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACABAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-13T08:31:56.892Z",
               "EditorCaption": ""
@@ -241,11 +245,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.h",
               "RelativeToolTip": "Player.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACcAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-13T08:29:07.067Z",
               "EditorCaption": ""
@@ -254,21 +258,22 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "SceneManager.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.cpp",
               "RelativeDocumentMoniker": "SceneManager.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.cpp",
               "RelativeToolTip": "SceneManager.cpp",
               "ViewState": "AQIAAC0AAAAAAAAAAAAAABkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-12T09:41:05.554Z"
+              "WhenOpened": "2024-11-12T09:41:05.554Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SceneManager.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.h",
               "RelativeDocumentMoniker": "SceneManager.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneManager.h",
               "RelativeToolTip": "SceneManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -278,9 +283,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "SceneGame.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp",
               "RelativeDocumentMoniker": "SceneGame.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp",
               "RelativeToolTip": "SceneGame.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -290,9 +295,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "SceneGame.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.h",
               "RelativeDocumentMoniker": "SceneGame.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.h",
               "RelativeToolTip": "SceneGame.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -302,9 +307,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "SceneTitle.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.cpp",
               "RelativeDocumentMoniker": "SceneTitle.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.cpp",
               "RelativeToolTip": "SceneTitle.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -314,9 +319,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "SceneTitle.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.h",
               "RelativeDocumentMoniker": "SceneTitle.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneTitle.h",
               "RelativeToolTip": "SceneTitle.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -326,9 +331,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "Pad.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.cpp",
               "RelativeDocumentMoniker": "Pad.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.cpp",
               "RelativeToolTip": "Pad.cpp",
               "ViewState": "AQIAABUAAAAAAAAAAAAAADcAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -338,9 +343,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "Pad.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.h",
               "RelativeDocumentMoniker": "Pad.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Pad.h",
               "RelativeToolTip": "Pad.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -350,9 +355,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\main.cpp",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\main.cpp",
               "RelativeToolTip": "main.cpp",
               "ViewState": "AQIAACMAAAAAAAAAAAAAADEAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -362,9 +367,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "game.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\game.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\game.h",
               "RelativeDocumentMoniker": "game.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\game.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\game.h",
               "RelativeToolTip": "game.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -374,9 +379,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "_baseEnemy.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseEnemy.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseEnemy.h",
               "RelativeDocumentMoniker": "_baseEnemy.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseEnemy.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseEnemy.h",
               "RelativeToolTip": "_baseEnemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -386,9 +391,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "_base2DGameObject.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_base2DGameObject.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_base2DGameObject.h",
               "RelativeDocumentMoniker": "_base2DGameObject.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_base2DGameObject.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_base2DGameObject.h",
               "RelativeToolTip": "_base2DGameObject.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -398,9 +403,9 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "_sceneBase.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_sceneBase.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_sceneBase.h",
               "RelativeDocumentMoniker": "_sceneBase.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_sceneBase.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_sceneBase.h",
               "RelativeToolTip": "_sceneBase.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -410,9 +415,9 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "_baseCollision.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseCollision.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseCollision.h",
               "RelativeDocumentMoniker": "_baseCollision.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseCollision.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\_baseCollision.h",
               "RelativeToolTip": "_baseCollision.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -422,9 +427,9 @@
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "Vec2.h",
-              "DocumentMoniker": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Vec2.h",
+              "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Vec2.h",
               "RelativeDocumentMoniker": "Vec2.h",
-              "ToolTip": "C:\\Users\\\u672B\u539F\u3000\u9280\u6B21\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Vec2.h",
+              "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Vec2.h",
               "RelativeToolTip": "Vec2.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",

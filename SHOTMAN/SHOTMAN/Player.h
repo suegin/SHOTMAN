@@ -36,13 +36,15 @@ public:
 	//PlayerのStateにより再生するアニメーションを変更
 	void AnimDraw(PlayerState state);
 
-	//速度の更新(PAD入力から速度の作成)
-	void VelocityUpdate();
+	//プレイヤーの速度の更新(PAD入力から速度の作成)
+	void PlayerVelocityUpdate();
+	//弾の速度の更新(PAD入力から速度の作成)
+	void BulletUpdate();
 
 	bool GetDir() const { return m_isDirLeft; }
 	bool GetShot() const { return m_isShot; }
 
-	PlayerState GetPlayerState();
+	PlayerState GetPlayerState()const;
 
 private:
 	/*グラフィックハンドル*/
@@ -65,7 +67,7 @@ private:
 	float m_jumpSpeed;
 
 	//現在の速度
-	Vec2 m_velocity{0,0};
+	Vec2 m_playerVelocity;
 
 	PlayerState m_playerState;
 

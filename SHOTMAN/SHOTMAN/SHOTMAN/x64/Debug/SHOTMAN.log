@@ -1,3 +1,6 @@
 ﻿  Player.cpp
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(277,14): warning C4101: 'state': ローカル変数は 1 度も使われていません。
-  SHOTMAN.vcxproj -> C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
+C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(154,93): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(154,69): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(154,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(154,18): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe

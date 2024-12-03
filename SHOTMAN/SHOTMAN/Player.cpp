@@ -52,7 +52,8 @@ Player::Player() :
 	m_isJump(false),
 	m_isShot(false),
 	m_isDirLeft(false),
-	m_jumpSpeed(0.0f)
+	m_jumpSpeed(0.0f),
+	m_playerVelocity(0,0)
 {
 	for (auto& shot : m_shot)
 	{
@@ -107,10 +108,10 @@ void Player::Update()
 
 	/*平行移動*/
 	//速度の更新
-	VelocityUpdate();
+	PlayerVelocityUpdate();
 
 	//移動処理
-	m_pos += m_velocity;
+	m_pos += m_playerVelocity;
 
 	//ジャンプ
 
@@ -119,7 +120,6 @@ void Player::Update()
 	{
 		if (!m_isJump)
 		{
-			m_playerState = kJump;
 			m_isJump = true;
 			m_isAction = true;
 			m_jumpSpeed = kJumpPower;
@@ -132,7 +132,6 @@ void Player::Update()
 		m_jumpSpeed += kGravity;
 		if (m_pos.Y >= 640)
 		{
-			m_playerState = kIdle;
 			m_isJump = false;
 			m_isAction = false;
 			m_jumpSpeed = 0.0f;
@@ -146,48 +145,19 @@ void Player::Update()
 		m_shot[i]->Update();
 	}
 
-	if (Pad::IsTrigger(PAD_INPUT_1))
-	{
-		for (int i = 0; i < kShotAllNum; ++i)
-		{
-			if (!m_shot[i]->m_shotFrag)
-			{
-				m_shot[i]->m_shotFrag = true;
-				m_isAction = true;
-
-				m_shot[i]->SetPos(Vec2(m_pos.X + 15.0f, m_pos.Y));
-				m_shot[i]->SetPos(Vec2(m_pos.X, m_pos.Y - kGraphHeight * 0.5f + 25));
-
-				if (m_isDirLeft)
-				{
-					m_shot[i]->SetDir(m_isDirLeft);
-				}
-
-				break;
-			}
-		}
-	}
-
-	for (int i = 0; i < kShotAllNum; ++i)
-	{
-		if (m_shot[i]->m_shotFrag)
-		{
-			if (m_shot[i]->GetPos().X >= Game::kScreenWidth ||
-				m_shot[i]->GetPos().X <= 0)
-			{
-				m_shot[i]->m_shotFrag = false;
-				m_isAction = false;
-			}
-			m_shot[i]->Draw();
-		}
-	}
+	BulletUpdate();
 }
 
 void Player::Draw()
 {
+#if _DEBUG
+	DrawBox(m_pos.X - kGraphWidth*0.5, m_pos.Y - kGraphHeight, m_pos.X + kGraphWidth*0.5, m_pos.Y, 0xffffff, false);
+#endif // _DEBUG
+
+	
+
 	//アニメーション再生
 	AnimDraw(m_playerState);
-
 }
 
 void Player::AnimUpdate(PlayerState state)
@@ -240,7 +210,7 @@ void Player::AnimDraw(PlayerState state)
 	}
 }
 
-void Player::VelocityUpdate()
+void Player::PlayerVelocityUpdate()
 {
 	//PADフラグチェック
 	bool IsRightPress = Pad::IsPress(PAD_INPUT_RIGHT);
@@ -249,38 +219,74 @@ void Player::VelocityUpdate()
 	//右速度
 	if (IsRightPress)
 	{
-		m_velocity.X = kSpeed;
+		m_playerVelocity.X = kSpeed;
 		m_isDirLeft = false;
-		m_isAction = true;
 	}
 	//左速度
 	if (IsLeftPress)
 	{
-		m_velocity.X = -kSpeed;
+		m_playerVelocity.X = -kSpeed;
 		m_isDirLeft = true;
-		m_isAction = true;
 	}
 	//押されていない
 	if (!IsRightPress && !IsLeftPress)
 	{
-		m_velocity.X = 0;
+		m_playerVelocity.X = 0;
 	}
 }
 
-Player::PlayerState Player::GetPlayerState()
+void Player::BulletUpdate()
 {
-	PlayerState state;
+	bool isShotTrigger = Pad::IsTrigger(PAD_INPUT_1);
+	bool isShot = false;
+
+	//弾の生成
+	if (isShotTrigger)
+	{
+		isShot = true;
+		for (int i = 0; i < kShotAllNum; ++i)
+		{
+			if (!m_shot[i]->GetFrag())
+			{
+				m_shot[i]->SetFrag(isShot);
+
+				m_shot[i]->SetPos(Vec2(m_pos.X + 15.0f, m_pos.Y));
+				m_shot[i]->SetPos(Vec2(m_pos.X, m_pos.Y - kGraphHeight * 0.5f + 25));
+
+				if (m_isDirLeft)
+				{
+					m_shot[i]->SetDir(m_isDirLeft);
+				}
+
+				break;
+			}
+		}
+	}
+
+	//弾の位置を更新して表示
+	for (int i = 0; i < kShotAllNum; ++i)
+	{
+		if (m_shot[i]->GetFrag())
+		{
+			m_shot[i]->Draw();
+		}
+	}
+}
+
+Player::PlayerState Player::GetPlayerState() const 
+{
+	PlayerState state = kIdle;
 
 	//フラグ出し
 	bool isJump = (m_pos.Y != 640);//ジャンプしているか
-	bool isWalk = (m_velocity.X != 0);//移動しているか
+	bool isRun = (m_playerVelocity.X != 0);//プレイヤーが移動しているか
 
+	//待機
+	if (!isRun && !isJump) { return PlayerState::kIdle; }
+	//Run
+	if (isRun && !isJump) { return PlayerState::kRun; }
 	//Jump
 	if (isJump) { return PlayerState::kJump; }
-	//待機
-	if (!isJump && !isWalk) { return PlayerState::kIdle; }
-	//Walk
-	if (!isJump && isWalk) { return PlayerState::kRun; }
 
 	return PlayerState::kIdle;
 }

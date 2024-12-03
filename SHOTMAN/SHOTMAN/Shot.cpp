@@ -4,10 +4,16 @@
 #include "game.h"
 #include "Player.h"
 
+namespace
+{
+	constexpr int kSpeed = 8;
+}
+
 Shot::Shot():
 	m_graphHandleShot(-1),
 	m_shotFrag{},
-	m_isDirLeft(false)
+	m_isDirLeft(false),
+	m_velocity(0,0)
 {
 }
 
@@ -21,24 +27,10 @@ void Shot::Init()
 
 void Shot::Update()
 {
-	if (m_shotFrag)
-	{
-		if (m_isDirLeft)
-		{
-			m_pos.X -= 8;
-		}
-		else
-		{
-			m_pos.X += 8;
-		}
+	BulletVelocityUpdate();
 
-		if (m_pos.X >= Game::kScreenWidth ||
-			m_pos.X <= 0)
-		{
-			m_shotFrag = false;
-			m_isDirLeft = false;
-		}
-	}
+	//’e‚ÌˆÚ“®ˆ—
+	m_pos += m_velocity;
 }
 
 void Shot::Draw()
@@ -53,9 +45,36 @@ void Shot::SetPos(const Vec2 setPos)
 	return;
 }
 
-void Shot::SetDir(bool setDir)
+void Shot::SetFrag(bool setShotFrag)
+{
+	m_shotFrag = setShotFrag;
+}
+
+void Shot::SetDir(const bool setDir)
 {
 	m_isDirLeft = setDir;
 
 	return;
+}
+
+void Shot::BulletVelocityUpdate()
+{
+	if (m_shotFrag)
+	{
+		if (m_isDirLeft)
+		{
+			m_velocity.X = -kSpeed;
+		}
+		else
+		{
+			m_velocity.X = kSpeed;
+		}
+
+		if (m_pos.X >= Game::kScreenWidth ||
+			m_pos.X <= 0)
+		{
+			m_shotFrag = false;
+			m_isDirLeft = false;
+		}
+	}
 }

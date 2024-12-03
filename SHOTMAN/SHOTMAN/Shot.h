@@ -13,15 +13,20 @@ public:
 	void Draw();
 
 	Vec2 GetPos()const { return m_pos; }
+	Vec2 GetVelocity()const { return m_velocity; }
+	bool GetFrag()const { return m_shotFrag; }
 
 	void SetPos(const Vec2 setPos);
+	void SetFrag(bool setShotFrag);
 	void SetDir(bool setDir);
 
-	bool m_shotFrag;
+	void BulletVelocityUpdate();
 
 private:
 	int m_graphHandleShot;
-
+	bool m_shotFrag;
 	bool m_isDirLeft;
+
+	Vec2 m_velocity;
 };
 
