@@ -15,4 +15,3 @@ protected:
 	bool m_isHit;
 	float m_center;
 };
-

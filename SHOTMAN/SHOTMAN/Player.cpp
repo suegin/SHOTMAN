@@ -11,6 +11,10 @@ namespace
 	constexpr int kGraphWidth = 128;
 	constexpr int kGraphHeight = 128;
 
+	//キャラクターのヒットボックス
+	constexpr int kHitBoxW = 50;
+	constexpr int kHitBoxH = 70;
+
 	//アニメーションのコマ数
 	constexpr int kIdleAnimNum = 6;
 	constexpr int kRunAnimNum = 10;
@@ -151,7 +155,15 @@ void Player::Update()
 void Player::Draw()
 {
 #if _DEBUG
-	DrawBox(m_pos.X - kGraphWidth*0.5, m_pos.Y - kGraphHeight, m_pos.X + kGraphWidth*0.5, m_pos.Y, 0xffffff, false);
+	if (m_isDirLeft)
+	{
+		DrawBox(m_pos.X - kHitBoxW * 0.5 + 10, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5, m_pos.Y, 0xffffff, false);
+	}
+	else
+	{
+		DrawBox(m_pos.X - kHitBoxW * 0.5, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5 - 10, m_pos.Y, 0xffffff, false);
+	}
+	
 #endif // _DEBUG
 
 	

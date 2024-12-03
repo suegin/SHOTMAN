@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "Vec2.h"
 
 Enemy::Enemy()
 {

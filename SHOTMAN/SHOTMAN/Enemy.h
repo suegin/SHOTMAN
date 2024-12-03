@@ -13,6 +13,6 @@ public:
 	void Draw() override;
 
 private:
-	int m_speed;
+	Vec2 m_velocity;
 };
 

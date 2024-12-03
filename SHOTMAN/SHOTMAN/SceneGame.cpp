@@ -2,6 +2,7 @@
 #include "DxLib.h"
 
 #include "Pad.h"
+#include "game.h"
 
 SceneGame::~SceneGame()
 {
@@ -28,6 +29,7 @@ void SceneGame::Update()
 
 void SceneGame::Draw()
 {
+	DrawBox(0, 0, Game::kScreenWidth, Game::kScreenHeight, 0x126478, true);
 	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
 	m_fade.Draw();

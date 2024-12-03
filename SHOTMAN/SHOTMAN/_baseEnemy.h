@@ -7,7 +7,7 @@ public:
 	virtual ~_baseEnemy() {};
 
 	virtual void Init() abstract;
-	virtual void Update() abstract {};
+	virtual void Update() abstract;
 	virtual void Draw() abstract;
 
 private:
