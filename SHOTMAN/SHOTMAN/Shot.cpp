@@ -35,7 +35,7 @@ void Shot::Update()
 
 void Shot::Draw()
 {
-		DrawCircle(m_pos.X, m_pos.Y, 10, 0xffffff, true);
+		DrawCircle(m_pos.X, m_pos.Y, 3, 0xffffff, true);
 }
 
 void Shot::SetPos(const Vec2 setPos)
@@ -45,7 +45,7 @@ void Shot::SetPos(const Vec2 setPos)
 	return;
 }
 
-void Shot::SetFrag(bool setShotFrag)
+void Shot::SetShotFrag(bool setShotFrag)
 {
 	m_shotFrag = setShotFrag;
 }

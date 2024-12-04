@@ -17,7 +17,7 @@ public:
 	bool GetFrag()const { return m_shotFrag; }
 
 	void SetPos(const Vec2 setPos);
-	void SetFrag(bool setShotFrag);
+	void SetShotFrag(bool setShotFrag);
 	void SetDir(bool setDir);
 
 	void BulletVelocityUpdate();

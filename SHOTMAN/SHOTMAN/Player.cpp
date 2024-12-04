@@ -33,10 +33,10 @@ namespace
 	constexpr float kGravity = 0.4f;	//重力
 
 	//ダメージを食らった後の無敵時間
-	constexpr int kDmageBlinkFrame = 30;
+	constexpr int kDamageBlinkFrame = 30;
 
 	//プレイヤーの初期HP
-	constexpr int kMacHp = 5;
+	constexpr int kMaxHp = 5;
 
 	//プレイヤーの初期位置
 	constexpr int kPlayerInitPosX = 100;
@@ -51,13 +51,11 @@ Player::Player() :
 	m_graphHandleShot(-1),
 	m_graphHandleDamage(-1),
 	m_graphHandleDeath(-1),
-	m_isAction(false),
-	m_isRun(false),
-	m_isJump(false),
-	m_isShot(false),
+	m_hp(kMaxHp),
+	m_blinkFrameCount(0),
 	m_isDirLeft(false),
 	m_jumpSpeed(0.0f),
-	m_playerVelocity(0,0)
+	m_velocity(0.0f,0.0f)
 {
 	for (auto& shot : m_shot)
 	{
@@ -104,6 +102,13 @@ void Player::Init()
 
 void Player::Update()
 {
+	//無敵時間の更新
+	--m_blinkFrameCount;
+	if (m_blinkFrameCount < 0)
+	{
+		m_blinkFrameCount = 0;
+	}
+
 	//現在のプレイヤーのステートを取得
 	m_playerState = GetPlayerState();
 
@@ -115,45 +120,28 @@ void Player::Update()
 	PlayerVelocityUpdate();
 
 	//移動処理
-	m_pos += m_playerVelocity;
+	m_pos += m_velocity;
 
 	//ジャンプ
-
+	JumpUpdate();
 	
-	if (Pad::IsTrigger(PAD_INPUT_2))
-	{
-		if (!m_isJump)
-		{
-			m_isJump = true;
-			m_isAction = true;
-			m_jumpSpeed = kJumpPower;
-		}
-	}
-
-	if (m_isJump)
-	{
-		m_pos.Y += m_jumpSpeed;
-		m_jumpSpeed += kGravity;
-		if (m_pos.Y >= 640)
-		{
-			m_isJump = false;
-			m_isAction = false;
-			m_jumpSpeed = 0.0f;
-			m_pos.Y = 640;
-			m_animJump.ResetAnimFrame();
-		}
-	}
-
+	
+	//Shotの更新
 	for (int i = 0; i < kShotAllNum; ++i)
 	{
 		m_shot[i]->Update();
 	}
-
+	//弾の更新
 	BulletUpdate();
 }
 
 void Player::Draw()
 {
+	//点滅処理
+	if (m_blinkFrameCount / 2 % 2)
+	{
+		return;
+	}
 #if _DEBUG
 	if (m_isDirLeft)
 	{
@@ -166,10 +154,42 @@ void Player::Draw()
 	
 #endif // _DEBUG
 
-	
+	BulletDraw();
 
 	//アニメーション再生
 	AnimDraw(m_playerState);
+}
+
+float Player::GetLeft() const
+{
+	return (m_pos.X - kHitBoxW * 0.5);
+}
+
+float Player::GetTop() const
+{
+	return (m_pos.Y - kHitBoxH);
+}
+
+float Player::GetRight() const
+{
+	return (m_pos.X + kHitBoxW * 0.5);
+}
+
+float Player::GetBottom() const
+{
+	return m_pos.Y;
+}
+
+void Player::OnDamage()
+{
+	if (m_blinkFrameCount > 0)
+	{
+		return;
+	}
+
+	m_blinkFrameCount = kDamageBlinkFrame;
+	
+	--m_hp;
 }
 
 void Player::AnimUpdate(PlayerState state)
@@ -231,39 +251,66 @@ void Player::PlayerVelocityUpdate()
 	//右速度
 	if (IsRightPress)
 	{
-		m_playerVelocity.X = kSpeed;
+		m_velocity.X = kSpeed;
 		m_isDirLeft = false;
 	}
 	//左速度
 	if (IsLeftPress)
 	{
-		m_playerVelocity.X = -kSpeed;
+		m_velocity.X = -kSpeed;
 		m_isDirLeft = true;
 	}
 	//押されていない
 	if (!IsRightPress && !IsLeftPress)
 	{
-		m_playerVelocity.X = 0;
+		m_velocity.X = 0;
+	}
+}
+
+void Player::JumpUpdate()
+{
+	bool isJumpTrigger = Pad::IsTrigger(PAD_INPUT_2);
+	bool isJump = (PlayerState::kJump == m_playerState);
+
+	if (isJumpTrigger)
+	{
+		if (!isJump)
+		{
+			isJump = true;
+			m_jumpSpeed = kJumpPower;
+		}
+	}
+
+	if (isJump)
+	{
+		m_pos.Y += m_jumpSpeed;
+		m_jumpSpeed += kGravity;
+		if (m_pos.Y >= 640)
+		{
+			isJump = false;
+			m_jumpSpeed = 0.0f;
+			m_pos.Y = 640;
+			m_animJump.ResetAnimFrame();
+		}
 	}
 }
 
 void Player::BulletUpdate()
 {
 	bool isShotTrigger = Pad::IsTrigger(PAD_INPUT_1);
-	bool isShot = false;
+	bool isShotFrag = false;
 
 	//弾の生成
 	if (isShotTrigger)
 	{
-		isShot = true;
+		isShotFrag = true;
 		for (int i = 0; i < kShotAllNum; ++i)
 		{
 			if (!m_shot[i]->GetFrag())
 			{
-				m_shot[i]->SetFrag(isShot);
+				m_shot[i]->SetShotFrag(isShotFrag);
 
-				m_shot[i]->SetPos(Vec2(m_pos.X + 15.0f, m_pos.Y));
-				m_shot[i]->SetPos(Vec2(m_pos.X, m_pos.Y - kGraphHeight * 0.5f + 25));
+				m_shot[i]->SetPos(Vec2(m_pos.X + kHitBoxW * 0.5, m_pos.Y - kGraphHeight * 0.5f + 25));
 
 				if (m_isDirLeft)
 				{
@@ -274,7 +321,10 @@ void Player::BulletUpdate()
 			}
 		}
 	}
+}
 
+void Player::BulletDraw()
+{
 	//弾の位置を更新して表示
 	for (int i = 0; i < kShotAllNum; ++i)
 	{
@@ -291,7 +341,7 @@ Player::PlayerState Player::GetPlayerState() const
 
 	//フラグ出し
 	bool isJump = (m_pos.Y != 640);//ジャンプしているか
-	bool isRun = (m_playerVelocity.X != 0);//プレイヤーが移動しているか
+	bool isRun = (m_velocity.X != 0);//プレイヤーが移動しているか
 
 	//待機
 	if (!isRun && !isJump) { return PlayerState::kIdle; }

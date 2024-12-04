@@ -1,10 +1,2 @@
-﻿  Player.cpp
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(160,93): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(160,70): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(160,50): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(160,36): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(164,93): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(164,82): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(164,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(164,19): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-  SHOTMAN.vcxproj -> C:\Users\末原　銀次\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
+﻿  CollisionManager.cpp
+  SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
