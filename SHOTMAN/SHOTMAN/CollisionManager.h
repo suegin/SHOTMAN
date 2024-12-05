@@ -1,6 +1,9 @@
 #pragma once
 #include "Vec2.h"
 
+#include "Player.h"
+#include "Enemy.h"
+
 class Player;
 class Enemy;
 
@@ -11,15 +14,14 @@ public:
 	~CollisionManager();
 
 	void Init();
-	void Update();
+	void Update(Player& player, Enemy& enemy);
 	void Draw();
-
-	bool GetIsCollision()const { return m_isCol; }
 
 private:
 	bool m_isCol;
-
-	Player* m_pPlayer;
-	Enemy* m_pEnemy;
+	bool m_isHitLeft;
+	bool m_isHitRight;
+	bool m_isHitTop;
+	bool m_isHitBottom;
 };
 

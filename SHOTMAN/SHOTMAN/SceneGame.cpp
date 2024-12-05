@@ -35,7 +35,7 @@ void SceneGame::Update()
 	m_pPlayer->Update();
 	m_pEnemy->Update();
 	m_fade.Update();
-	m_collitionManager.Update();
+	m_collisionManager.Update(*m_pPlayer,*m_pEnemy);
 }
 
 void SceneGame::Draw()
@@ -45,6 +45,9 @@ void SceneGame::Draw()
 	m_pEnemy->Draw();
 	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
+	DrawFormatString(10, 30, 0xffffff, "HP:%d", m_pPlayer->GetHp());
+	DrawFormatString(10, 50, 0xffffff, "VelocityX:%.02f,VelocityY%.02f", m_pPlayer->GetVelocity().X, m_pPlayer->GetVelocity().Y);
+	DrawFormatString(10, 70, 0xffffff, "FrameCount:%d", m_pPlayer->GetBlinkFrameCount());
 	m_fade.Draw();
 }
 

@@ -38,7 +38,7 @@ public:
 	float GetBottom() const;
 
 	//プレイヤーがダメージを受けるオブジェクトにぶつかった
-	void OnDamage();
+	void OnDamage(bool isHitLeft, bool isHitRight);
 
 	//PlayerのStateにより更新するアニメーションを変更
 	void AnimUpdate(PlayerState state);
@@ -53,7 +53,11 @@ public:
 	void BulletUpdate();
 	void BulletDraw();
 
-	bool GetDir() const { return m_isDirLeft; }
+	bool GetDir()const { return m_isDirLeft; }
+	Vec2 GetPos()const { return m_pos; }
+	Vec2 GetVelocity()const { return m_velocity; }
+	int GetHp()const { return m_hp; }
+	int GetBlinkFrameCount()const { return m_blinkFrameCount; }
 
 	PlayerState GetPlayerState()const;
 
@@ -69,8 +73,10 @@ private:
 	int m_hp;
 	//ダメージを受けた際の無敵と点滅用
 	int m_blinkFrameCount;
-
+	//プレイヤーの状態
 	bool m_isJump;
+	bool m_isDamage;
+	bool m_isShot;
 
 	//左を向いているか
 	bool m_isDirLeft;
@@ -87,6 +93,7 @@ private:
 	Animation m_animRun;
 	Animation m_animJump;
 	Animation m_animShot;
+	Animation m_animDamage;
 
 	Shot* m_shot[kShotAllNum];
 };

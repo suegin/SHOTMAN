@@ -34,7 +34,7 @@ void Enemy::Update()
 
 void Enemy::Draw()
 {
-	DrawBox(m_pos.X - kHitBoxW*0.5, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5, m_pos.Y, 0xff0000, true);
+	DrawBox(m_pos.X - kHitBoxW*0.5, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW*0.5, m_pos.Y, 0xff0000, true);
 }
 
 float Enemy::GetLeft()

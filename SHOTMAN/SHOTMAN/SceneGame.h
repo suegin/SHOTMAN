@@ -29,6 +29,6 @@ private:
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
 	Fade m_fade;
-	CollisionManager m_collitionManager;
+	CollisionManager m_collisionManager;
 };
 

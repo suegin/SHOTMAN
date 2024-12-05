@@ -4,6 +4,7 @@
 #include <cassert>
 #include "Pad.h"
 #include "Shot.h"
+#include "CollisionManager.h"
 
 namespace
 {
@@ -12,14 +13,17 @@ namespace
 	constexpr int kGraphHeight = 128;
 
 	//キャラクターのヒットボックス
-	constexpr int kHitBoxW = 50;
-	constexpr int kHitBoxH = 70;
+	constexpr int kHitBoxW = 45;
+	constexpr int kHitBoxH = 65;
+	//ヒットボックスの調整
+	constexpr int kAdjustmentHitBox = 10;
 
 	//アニメーションのコマ数
 	constexpr int kIdleAnimNum = 6;
 	constexpr int kRunAnimNum = 10;
 	constexpr int kJumpAnimNum = 10;
 	constexpr int kShotAnimNum = 4;
+	constexpr int kDamageAnimNum = 5;
 
 	//アニメーションの1コマのフレーム数
 	constexpr int kSingleAnimFrame = 6;
@@ -34,6 +38,12 @@ namespace
 
 	//ダメージを食らった後の無敵時間
 	constexpr int kDamageBlinkFrame = 30;
+
+	//ダメージを食らった後の吹き飛ばされる速度
+	constexpr int kDamageAction = 3;
+
+	//ダメージアクションを徐々に緩める力
+	constexpr int kDamageActionControl = 0.2;
 
 	//プレイヤーの初期HP
 	constexpr int kMaxHp = 5;
@@ -53,6 +63,9 @@ Player::Player() :
 	m_graphHandleDeath(-1),
 	m_hp(kMaxHp),
 	m_blinkFrameCount(0),
+	m_isJump(false),
+	m_isDamage(false),
+	m_isShot(false),
 	m_isDirLeft(false),
 	m_jumpSpeed(0.0f),
 	m_velocity(0.0f,0.0f)
@@ -89,13 +102,17 @@ void Player::Init()
 	//発射
 	m_graphHandleShot = LoadGraph("image/Player/Shot.png");
 	assert(m_graphHandleShot);
+	//被弾
+	m_graphHandleDamage = LoadGraph("image/Player/Damage.png");
+	assert(m_graphHandleDamage);
 
 	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, kSingleAnimFrame, kIdleAnimNum);
 	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight,kSingleAnimFrame, kRunAnimNum);
 	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, kSingleAnimFrame, kJumpAnimNum);
 	m_animShot.Init(m_graphHandleShot, kGraphWidth, kGraphHeight, kShotSingleAnimFrame, kShotAnimNum);
+	m_animDamage.Init(m_graphHandleDamage, kGraphWidth, kGraphHeight, kSingleAnimFrame, kDamageAnimNum);
 
-	//プレイヤーのの位置の初期化
+	//プレイヤーの位置の初期化
 	m_pos.X = kPlayerInitPosX;
 	m_pos.Y = kPlayerInitPosY;
 }
@@ -145,11 +162,11 @@ void Player::Draw()
 #if _DEBUG
 	if (m_isDirLeft)
 	{
-		DrawBox(m_pos.X - kHitBoxW * 0.5 + 10, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5, m_pos.Y, 0xffffff, false);
+		DrawBox(m_pos.X - kHitBoxW * 0.5 + kAdjustmentHitBox, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5, m_pos.Y, 0xffffff, false);
 	}
 	else
 	{
-		DrawBox(m_pos.X - kHitBoxW * 0.5, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5 - 10, m_pos.Y, 0xffffff, false);
+		DrawBox(m_pos.X - kHitBoxW * 0.5, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW * 0.5 - kAdjustmentHitBox, m_pos.Y, 0xffffff, false);
 	}
 	
 #endif // _DEBUG
@@ -162,7 +179,15 @@ void Player::Draw()
 
 float Player::GetLeft() const
 {
-	return (m_pos.X - kHitBoxW * 0.5);
+	if (m_isDirLeft)
+	{
+		return (m_pos.X - (kHitBoxW * 0.5 - kAdjustmentHitBox));
+	}
+	else
+	{
+		return (m_pos.X - (kHitBoxW * 0.5));
+	}
+	
 }
 
 float Player::GetTop() const
@@ -172,7 +197,15 @@ float Player::GetTop() const
 
 float Player::GetRight() const
 {
-	return (m_pos.X + kHitBoxW * 0.5);
+	if (m_isDirLeft)
+	{
+		return (m_pos.X + (kHitBoxW * 0.5));
+	}
+	else
+	{
+		return (m_pos.X + (kHitBoxW * 0.5) - kAdjustmentHitBox);
+	}
+	
 }
 
 float Player::GetBottom() const
@@ -180,7 +213,7 @@ float Player::GetBottom() const
 	return m_pos.Y;
 }
 
-void Player::OnDamage()
+void Player::OnDamage(bool isHitLeft, bool isHitRight)
 {
 	if (m_blinkFrameCount > 0)
 	{
@@ -188,6 +221,22 @@ void Player::OnDamage()
 	}
 
 	m_blinkFrameCount = kDamageBlinkFrame;
+
+	if (isHitLeft)
+	{
+		m_velocity.X = 0;
+		m_velocity.X = kDamageAction;
+	}
+	if (isHitRight)
+	{
+		m_velocity.X = 0;
+		m_velocity.X = -kDamageAction;
+	}
+
+	if (m_blinkFrameCount == 0)
+	{
+		return;
+	}
 	
 	--m_hp;
 }
@@ -209,6 +258,7 @@ void Player::AnimUpdate(PlayerState state)
 		m_animShot.Update();
 		break;
 	case Player::kDamage:
+		m_animDamage.Update();
 		break;
 	case Player::kDeath:
 		break;
@@ -234,6 +284,7 @@ void Player::AnimDraw(PlayerState state)
 		m_animShot.Play(m_pos, m_isDirLeft);
 		break;
 	case Player::kDamage:
+		m_animDamage.Play(m_pos,m_isDirLeft);
 		break;
 	case Player::kDeath:
 		break;
@@ -298,22 +349,22 @@ void Player::JumpUpdate()
 void Player::BulletUpdate()
 {
 	bool isShotTrigger = Pad::IsTrigger(PAD_INPUT_1);
-	bool isShotFrag = false;
 
 	//弾の生成
 	if (isShotTrigger)
 	{
-		isShotFrag = true;
+		m_isShot = true;
 		for (int i = 0; i < kShotAllNum; ++i)
 		{
 			if (!m_shot[i]->GetFrag())
 			{
-				m_shot[i]->SetShotFrag(isShotFrag);
+				m_shot[i]->SetShotFrag(m_isShot);
 
 				m_shot[i]->SetPos(Vec2(m_pos.X + kHitBoxW * 0.5, m_pos.Y - kGraphHeight * 0.5f + 25));
 
 				if (m_isDirLeft)
 				{
+					m_shot[i]->SetPos(Vec2(m_pos.X - kHitBoxW * 0.5, m_pos.Y - kGraphHeight * 0.5f + 25));
 					m_shot[i]->SetDir(m_isDirLeft);
 				}
 
@@ -337,18 +388,20 @@ void Player::BulletDraw()
 
 Player::PlayerState Player::GetPlayerState() const 
 {
-	PlayerState state = kIdle;
-
 	//フラグ出し
 	bool isJump = (m_pos.Y != 640);//ジャンプしているか
 	bool isRun = (m_velocity.X != 0);//プレイヤーが移動しているか
 
 	//待機
-	if (!isRun && !isJump) { return PlayerState::kIdle; }
+	if (!isRun && !isJump && !m_isShot && !m_isDamage) { return PlayerState::kIdle; }
 	//Run
-	if (isRun && !isJump) { return PlayerState::kRun; }
+	if (isRun && !isJump && !m_isShot && !m_isDamage) { return PlayerState::kRun; }
 	//Jump
-	if (isJump) { return PlayerState::kJump; }
+	if (isJump && !m_isShot && !m_isDamage) { return PlayerState::kJump; }
+	//Shot
+	if (m_isShot && !m_isDamage) { return PlayerState::kShot; }
+	//被弾
+	if (m_isDamage) { return PlayerState::kDamage; }
 
 	return PlayerState::kIdle;
 }

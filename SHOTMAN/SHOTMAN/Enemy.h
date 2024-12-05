@@ -12,6 +12,8 @@ public:
 	void Update() override;
 	void Draw() override;
 
+	Vec2 GetPos()const { return m_pos; }
+
 	//“G‚Ìî•ñ‚ğæ“¾‚·‚é
 	float GetLeft();
 	float GetTop();
