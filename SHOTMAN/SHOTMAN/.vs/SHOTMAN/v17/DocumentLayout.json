@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:SceneGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|solutionrelative:CollisionManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3179304-09C1-4D56-954F-68C2463B1685}|SHOTMAN.vcxproj|C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -122,7 +122,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Document",
@@ -134,8 +134,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AQIAAAcAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-12T09:20:02.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:20:02.814Z"
             },
             {
               "$type": "Document",
@@ -147,8 +146,7 @@
               "RelativeToolTip": "Shot.cpp",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAACUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-21T02:46:41.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T02:46:41.63Z"
             },
             {
               "$type": "Document",
@@ -160,18 +158,17 @@
               "RelativeToolTip": "Shot.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-21T02:43:47.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T02:43:47.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CollisionManager.cpp",
               "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\CollisionManager.cpp",
               "RelativeDocumentMoniker": "CollisionManager.cpp",
               "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\CollisionManager.cpp",
               "RelativeToolTip": "CollisionManager.cpp",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAADUAAAACAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAADUAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-04T01:43:01.471Z",
               "EditorCaption": ""
@@ -186,8 +183,7 @@
               "RelativeToolTip": "CollisionManager.h",
               "ViewState": "AQIAAAMAAAAAAAAAAAAgwBEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T01:41:56.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T01:41:56.914Z"
             },
             {
               "$type": "Document",
@@ -199,8 +195,7 @@
               "RelativeToolTip": "AnimationManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-28T09:36:09.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T09:36:09.015Z"
             },
             {
               "$type": "Document",
@@ -212,8 +207,7 @@
               "RelativeToolTip": "Enemy.cpp",
               "ViewState": "AQIAABUAAAAAAAAAAAAAADMAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T09:50:51.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T09:50:51.105Z"
             },
             {
               "$type": "Document",
@@ -225,8 +219,7 @@
               "RelativeToolTip": "Enemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T09:45:41.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T09:45:41.824Z"
             },
             {
               "$type": "Document",
@@ -238,8 +231,7 @@
               "RelativeToolTip": "Fade.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T07:20:18.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T07:20:18.328Z"
             },
             {
               "$type": "Document",
@@ -251,8 +243,7 @@
               "RelativeToolTip": "Fade.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-25T07:18:38.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T07:18:38.447Z"
             },
             {
               "$type": "Document",
@@ -264,8 +255,7 @@
               "RelativeToolTip": "Animation.cpp",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-18T09:03:28.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T09:03:28.296Z"
             },
             {
               "$type": "Document",
@@ -277,8 +267,7 @@
               "RelativeToolTip": "Animation.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-18T09:00:10.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T09:00:10.063Z"
             },
             {
               "$type": "Document",
@@ -290,8 +279,7 @@
               "RelativeToolTip": "Player.cpp",
               "ViewState": "AQIAAFMBAAAAAAAAAAAAAJEBAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-13T08:31:56.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T08:31:56.892Z"
             },
             {
               "$type": "Document",
@@ -303,8 +291,7 @@
               "RelativeToolTip": "Player.h",
               "ViewState": "AQIAADwAAAAAAAAAAAAAAE4AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-13T08:29:07.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T08:29:07.067Z"
             },
             {
               "$type": "Document",
@@ -316,8 +303,7 @@
               "RelativeToolTip": "SceneManager.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAE8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-12T09:41:05.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:41:05.554Z"
             },
             {
               "$type": "Document",
@@ -329,18 +315,17 @@
               "RelativeToolTip": "SceneManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-12T09:36:29.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:36:29.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SceneGame.cpp",
               "DocumentMoniker": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp",
               "RelativeDocumentMoniker": "SceneGame.cpp",
               "ToolTip": "C:\\Users\\fko2447006\\Documents\\GitHub\\SHOTMAN\\SHOTMAN\\SHOTMAN\\SceneGame.cpp",
               "RelativeToolTip": "SceneGame.cpp",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAqwDAAAAB8AAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAqwDAAAAB8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-12T09:35:06.4Z",
               "EditorCaption": ""
@@ -355,8 +340,7 @@
               "RelativeToolTip": "SceneGame.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-12T09:34:15.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:34:15.881Z"
             },
             {
               "$type": "Document",
@@ -368,8 +352,7 @@
               "RelativeToolTip": "SceneTitle.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-12T09:32:35.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:32:35.429Z"
             },
             {
               "$type": "Document",
@@ -393,8 +376,7 @@
               "RelativeToolTip": "Pad.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-12T09:22:32.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:22:32.085Z"
             },
             {
               "$type": "Document",
@@ -442,8 +424,7 @@
               "RelativeToolTip": "_base2DGameObject.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAYwBMAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-12T09:24:08.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:24:08.898Z"
             },
             {
               "$type": "Document",
@@ -455,8 +436,7 @@
               "RelativeToolTip": "_sceneBase.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-12T09:24:04.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:24:04.918Z"
             },
             {
               "$type": "Document",
