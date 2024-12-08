@@ -1,2 +1,17 @@
-﻿  CollisionManager.cpp
-  SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
+﻿  Player.cpp
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(46,37): warning C4244: '初期化中': 'double' から 'const int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(174,108): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(174,85): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(174,65): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(174,36): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(178,108): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(178,82): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(178,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(178,19): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(191,10): warning C4244: 'return': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(195,10): warning C4244: 'return': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(209,10): warning C4244: 'return': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(213,10): warning C4244: 'return': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(369,36): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\Player.cpp(373,37): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+  SHOTMAN.vcxproj -> C:\Users\NEXTs\OneDrive\ドキュメント\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe

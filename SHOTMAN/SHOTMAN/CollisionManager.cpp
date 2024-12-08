@@ -6,7 +6,10 @@ CollisionManager::CollisionManager() :
 	m_isHitLeft(false),
 	m_isHitRight(false),
 	m_isHitTop(false),
-	m_isHitBottom(false)
+	m_isHitBottom(false),
+	m_isLastHitLeft(false),
+	m_isLastHitRight(false)
+	
 {
 }
 
@@ -55,8 +58,10 @@ void CollisionManager::Update(Player& player, Enemy& enemy)
 
 	if (m_isCol)
 	{
-		player.OnDamage(m_isHitLeft,m_isHitRight);
+		player.OnDamage(m_isHitLeft,m_isHitRight, m_isLastHitLeft, m_isLastHitRight);
 	}
+	m_isLastHitLeft = m_isHitLeft;
+	m_isLastHitRight = m_isHitRight;
 }
 
 void CollisionManager::Draw()

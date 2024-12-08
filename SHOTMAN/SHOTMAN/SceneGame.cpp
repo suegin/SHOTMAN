@@ -48,6 +48,7 @@ void SceneGame::Draw()
 	DrawFormatString(10, 30, 0xffffff, "HP:%d", m_pPlayer->GetHp());
 	DrawFormatString(10, 50, 0xffffff, "VelocityX:%.02f,VelocityY%.02f", m_pPlayer->GetVelocity().X, m_pPlayer->GetVelocity().Y);
 	DrawFormatString(10, 70, 0xffffff, "FrameCount:%d", m_pPlayer->GetBlinkFrameCount());
+	DrawFormatString(10, 90, 0xffffff, "isLeft:%d,isRigt:%d", m_collisionManager.GetIsHitLeft(), m_collisionManager.GetIsHitRight());
 	m_fade.Draw();
 }
 

@@ -126,34 +126,43 @@ void Player::Update()
 		m_blinkFrameCount = 0;
 	}
 
+	GetPlayerState();
+
 	//現在のプレイヤーのステートを取得
 	m_playerState = GetPlayerState();
+
+	//ジャンプ
+	JumpUpdate();
+
+	//移動処理
+	m_pos += m_velocity;
+
+	//弾の更新
+	BulletUpdate();
+
+	//Shotの更新
+	for (int i = 0; i < kShotAllNum; ++i)
+	{
+		m_shot[i]->Update();
+	}
+
+	if (m_playerState == kDamage)
+	{
+		return;
+	}
 
 	//ステートによってアニメーションの変更
 	AnimUpdate(m_playerState);
 
 	/*平行移動*/
 	//速度の更新
-	PlayerVelocityUpdate();
-
-	//移動処理
-	m_pos += m_velocity;
-
-	//ジャンプ
-	JumpUpdate();
-	
-	
-	//Shotの更新
-	for (int i = 0; i < kShotAllNum; ++i)
-	{
-		m_shot[i]->Update();
-	}
-	//弾の更新
-	BulletUpdate();
+	PlayerVelocityUpdate();\
 }
 
 void Player::Draw()
 {
+	BulletDraw();
+
 	//点滅処理
 	if (m_blinkFrameCount / 2 % 2)
 	{
@@ -170,8 +179,6 @@ void Player::Draw()
 	}
 	
 #endif // _DEBUG
-
-	BulletDraw();
 
 	//アニメーション再生
 	AnimDraw(m_playerState);
@@ -213,7 +220,7 @@ float Player::GetBottom() const
 	return m_pos.Y;
 }
 
-void Player::OnDamage(bool isHitLeft, bool isHitRight)
+void Player::OnDamage(bool isHitLeft, bool isHitRight, bool isLastHitLeft, bool isLastHitRight)
 {
 	if (m_blinkFrameCount > 0)
 	{
@@ -222,12 +229,12 @@ void Player::OnDamage(bool isHitLeft, bool isHitRight)
 
 	m_blinkFrameCount = kDamageBlinkFrame;
 
-	if (isHitLeft)
+	if (isHitLeft && !isLastHitLeft)
 	{
 		m_velocity.X = 0;
 		m_velocity.X = kDamageAction;
 	}
-	if (isHitRight)
+	if (isHitRight && !isLastHitRight)
 	{
 		m_velocity.X = 0;
 		m_velocity.X = -kDamageAction;
@@ -328,18 +335,17 @@ void Player::JumpUpdate()
 		if (!isJump)
 		{
 			isJump = true;
-			m_jumpSpeed = kJumpPower;
+			m_velocity.Y = kJumpPower;
 		}
 	}
 
 	if (isJump)
 	{
-		m_pos.Y += m_jumpSpeed;
-		m_jumpSpeed += kGravity;
-		if (m_pos.Y >= 640)
+		m_velocity.Y += kGravity;
+		if (m_pos.Y >= 641)
 		{
 			isJump = false;
-			m_jumpSpeed = 0.0f;
+			m_velocity.Y = 0.0f;
 			m_pos.Y = 640;
 			m_animJump.ResetAnimFrame();
 		}
@@ -383,6 +389,7 @@ void Player::BulletDraw()
 		{
 			m_shot[i]->Draw();
 		}
+		m_isShot = false;
 	}
 }
 
@@ -391,17 +398,18 @@ Player::PlayerState Player::GetPlayerState() const
 	//フラグ出し
 	bool isJump = (m_pos.Y != 640);//ジャンプしているか
 	bool isRun = (m_velocity.X != 0);//プレイヤーが移動しているか
+	bool isDamage = (m_blinkFrameCount > 0);//被弾しているか
 
 	//待機
-	if (!isRun && !isJump && !m_isShot && !m_isDamage) { return PlayerState::kIdle; }
+	if (!isRun && !isJump && !m_isShot && !isDamage) { return PlayerState::kIdle; }
 	//Run
-	if (isRun && !isJump && !m_isShot && !m_isDamage) { return PlayerState::kRun; }
+	if (isRun && !isJump && !m_isShot && !isDamage) { return PlayerState::kRun; }
 	//Jump
-	if (isJump && !m_isShot && !m_isDamage) { return PlayerState::kJump; }
+	if (isJump && !m_isShot && !isDamage) { return PlayerState::kJump; }
 	//Shot
-	if (m_isShot && !m_isDamage) { return PlayerState::kShot; }
+	if (m_isShot && !isDamage) { return PlayerState::kShot; }
 	//被弾
-	if (m_isDamage) { return PlayerState::kDamage; }
+	if (isDamage) { return PlayerState::kDamage; }
 
 	return PlayerState::kIdle;
 }

@@ -38,7 +38,7 @@ public:
 	float GetBottom() const;
 
 	//プレイヤーがダメージを受けるオブジェクトにぶつかった
-	void OnDamage(bool isHitLeft, bool isHitRight);
+	void OnDamage(bool isHitLeft, bool isHitRight, bool isLastHitLeft, bool isLastHitRight);
 
 	//PlayerのStateにより更新するアニメーションを変更
 	void AnimUpdate(PlayerState state);
