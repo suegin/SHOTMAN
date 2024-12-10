@@ -156,7 +156,7 @@ void Player::Update()
 
 	/*平行移動*/
 	//速度の更新
-	PlayerVelocityUpdate();\
+	PlayerVelocityUpdate();
 }
 
 void Player::Draw()
