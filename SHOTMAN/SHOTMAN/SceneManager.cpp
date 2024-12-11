@@ -7,7 +7,7 @@
 #include "SceneGame.h"
 
 SceneManager::SceneManager():
-	m_kind(kSceneTitle),
+	m_kind(kSceneGame),
 	m_pSceneTitle(nullptr),
 	m_pSceneGame(nullptr)
 {

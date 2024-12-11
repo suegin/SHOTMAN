@@ -67,6 +67,7 @@ Player::Player() :
 	m_isDamage(false),
 	m_isShot(false),
 	m_isDirLeft(false),
+	m_isFloor(true),
 	m_jumpSpeed(0.0f),
 	m_velocity(0.0f,0.0f)
 {
@@ -119,44 +120,40 @@ void Player::Init()
 
 void Player::Update()
 {
-	//無敵時間の更新
-	--m_blinkFrameCount;
-	if (m_blinkFrameCount < 0)
-	{
-		m_blinkFrameCount = 0;
-	}
+	/*Pad入力の取得*/
+	
 
-	GetPlayerState();
-
-	//現在のプレイヤーのステートを取得
+	/*現在の状態の取得*/
+	if (m_pos.Y >= 641) { m_isFloor = true; }//床の触れているかの判定
 	m_playerState = GetPlayerState();
 
+
+	/*各状態での移動処理*/
+	//ダメージ状態の処理
+	if (m_playerState == PlayerState::kDamage) { --m_blinkFrameCount; }//無敵時間の更新
 	//ジャンプ
-	JumpUpdate();
+	if (m_playerState != Player::kDamage) { JumpUpdate(); }//ダメージを受けていたらジャンプ出来ない
+	//if (jump) { Jump(); }
+	//if (run) { Run();  }
+	//if (damage) { Damage(); }
+	//if (shot) { Shot(); }
 
-	//移動処理
-	m_pos += m_velocity;
+	/*各状態での特殊処理*/
+	//弾丸
+	if (m_playerState != Player::kDamage) { BulletUpdate(); }//ダメージを受けていたら撃てない
+	//Shotの更新(既に撃っている弾は飛んでいく)
+	for (int i = 0; i < kShotAllNum; ++i) { m_shot[i]->Update(); }
 
-	//弾の更新
-	BulletUpdate();
 
-	//Shotの更新
-	for (int i = 0; i < kShotAllNum; ++i)
-	{
-		m_shot[i]->Update();
-	}
-
-	if (m_playerState == kDamage)
-	{
-		return;
-	}
-
+	/*各状態でのアニメーション処理*/
 	//ステートによってアニメーションの変更
 	AnimUpdate(m_playerState);
 
-	/*平行移動*/
-	//速度の更新
+	/*速度の更新*/
 	PlayerVelocityUpdate();
+
+	/*位置の更新*/
+	m_pos += m_velocity;
 }
 
 void Player::Draw()
@@ -222,28 +219,32 @@ float Player::GetBottom() const
 
 void Player::OnDamage(bool isHitLeft, bool isHitRight, bool isLastHitLeft, bool isLastHitRight)
 {
+	//既に被弾している場合はreturn
 	if (m_blinkFrameCount > 0)
 	{
 		return;
 	}
 
+	//無敵時間付与
 	m_blinkFrameCount = kDamageBlinkFrame;
 
+	//プレイヤーの左が敵の右に当たった場合右にヒットバック
 	if (isHitLeft && !isLastHitLeft)
 	{
 		m_velocity.X = 0;
 		m_velocity.X = kDamageAction;
 	}
+	//プレイヤーの右が敵の左に当たった場合左にヒットバック
 	if (isHitRight && !isLastHitRight)
 	{
 		m_velocity.X = 0;
 		m_velocity.X = -kDamageAction;
 	}
 
-	if (m_blinkFrameCount == 0)
+	/*if (m_blinkFrameCount == 0)
 	{
 		return;
-	}
+	}*/
 	
 	--m_hp;
 }
@@ -302,6 +303,9 @@ void Player::AnimDraw(PlayerState state)
 
 void Player::PlayerVelocityUpdate()
 {
+	//最終的な速度
+	Vec2 lastVec;
+
 	//PADフラグチェック
 	bool IsRightPress = Pad::IsPress(PAD_INPUT_RIGHT);
 	bool IsLeftPress = Pad::IsPress(PAD_INPUT_LEFT);
@@ -309,20 +313,36 @@ void Player::PlayerVelocityUpdate()
 	//右速度
 	if (IsRightPress)
 	{
-		m_velocity.X = kSpeed;
+		lastVec.X = kSpeed;
 		m_isDirLeft = false;
 	}
 	//左速度
 	if (IsLeftPress)
 	{
-		m_velocity.X = -kSpeed;
+		lastVec.X = -kSpeed;
 		m_isDirLeft = true;
 	}
-	//押されていない
-	if (!IsRightPress && !IsLeftPress)
+	//床に触れいてるならY方向の速度をゼロにする.
+	if (m_isFloor)
 	{
-		m_velocity.X = 0;
+		lastVec.Y = 0.0f;
+		m_pos.Y = 640;//めり込み調整
+		m_animJump.ResetAnimFrame();//ジャンプアニメーションを最初に戻す
 	}
+	//落下しているか
+	if (!m_isFloor)
+	{
+		//落下している場合は、速度に重力加速度を足す
+		lastVec.Y = m_velocity.Y + kGravity;
+	}
+	//ダメージを受けているか
+	if (m_playerState == PlayerState::kDamage)
+	{
+		lastVec.X = m_velocity.X;
+	}
+
+	//速度の更新
+	m_velocity = lastVec;
 }
 
 void Player::JumpUpdate()
@@ -335,21 +355,12 @@ void Player::JumpUpdate()
 		if (!isJump)
 		{
 			isJump = true;
+			m_isFloor = false;
 			m_velocity.Y = kJumpPower;
 		}
 	}
 
-	if (isJump)
-	{
-		m_velocity.Y += kGravity;
-		if (m_pos.Y >= 641)
-		{
-			isJump = false;
-			m_velocity.Y = 0.0f;
-			m_pos.Y = 640;
-			m_animJump.ResetAnimFrame();
-		}
-	}
+	
 }
 
 void Player::BulletUpdate()

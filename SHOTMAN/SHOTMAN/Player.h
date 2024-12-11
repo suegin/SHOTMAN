@@ -59,6 +59,7 @@ public:
 	int GetHp()const { return m_hp; }
 	int GetBlinkFrameCount()const { return m_blinkFrameCount; }
 
+	//Œ»İ‚ÌPlayer‚Ìó‘Ô‚ğæ“¾‚·‚é
 	PlayerState GetPlayerState()const;
 
 private:
@@ -80,6 +81,9 @@ private:
 
 	//¶‚ğŒü‚¢‚Ä‚¢‚é‚©
 	bool m_isDirLeft;
+
+	//°‚ÆG‚ê‚Ä‚¢‚é‚©
+	bool m_isFloor;
 	
 	float m_jumpSpeed;
 
