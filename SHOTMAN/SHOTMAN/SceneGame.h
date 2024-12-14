@@ -30,5 +30,7 @@ private:
 	Enemy* m_pEnemy;
 	Fade m_fade;
 	CollisionManager m_collisionManager;
+
+	int hp = 0;
 };
 

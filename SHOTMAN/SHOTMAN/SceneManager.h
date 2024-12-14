@@ -18,6 +18,7 @@ public:
 	{
 		kSceneTitle,
 		kSceneGame,
+		kSceneGameOver,
 
 		kSceneNum
 	};

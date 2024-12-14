@@ -109,6 +109,12 @@ public:
 		return (*this) / len;
 	}
 
+	Vec2 VGet(float x, float y)
+	{
+		Vec2 temp = { x, y };
+		return temp;
+	}
+
 	// 内積の計算
 	// ベクトルのなす角を計算する時に使う
 

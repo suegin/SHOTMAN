@@ -13,7 +13,7 @@ namespace
 	constexpr int kGraphHeight = 128;
 
 	//キャラクターのヒットボックス
-	constexpr int kHitBoxW = 45;
+	constexpr int kHitBoxW = 40;
 	constexpr int kHitBoxH = 65;
 	//ヒットボックスの調整
 	constexpr int kAdjustmentHitBox = 10;
@@ -24,10 +24,12 @@ namespace
 	constexpr int kJumpAnimNum = 10;
 	constexpr int kShotAnimNum = 4;
 	constexpr int kDamageAnimNum = 5;
+	constexpr int kDeathAnimNum = 5;
 
 	//アニメーションの1コマのフレーム数
 	constexpr int kSingleAnimFrame = 6;
 	constexpr int kShotSingleAnimFrame = 2;
+	constexpr int kDeathSingleAnimFrame = 24;
 
 	//キャラクターの移動速度
 	constexpr float kSpeed = 5.0f;
@@ -48,6 +50,9 @@ namespace
 	//プレイヤーの初期HP
 	constexpr int kMaxHp = 5;
 
+	//死亡演出の時間
+	constexpr int kDeathFrame = 120;
+
 	//プレイヤーの初期位置
 	constexpr int kPlayerInitPosX = 100;
 	constexpr int kPlayerInitPosY = 640;
@@ -63,6 +68,7 @@ Player::Player() :
 	m_graphHandleDeath(-1),
 	m_hp(kMaxHp),
 	m_blinkFrameCount(0),
+	m_deathFrameCount(0),
 	m_isJump(false),
 	m_isDamage(false),
 	m_isShot(false),
@@ -106,12 +112,15 @@ void Player::Init()
 	//被弾
 	m_graphHandleDamage = LoadGraph("image/Player/Damage.png");
 	assert(m_graphHandleDamage);
+	m_graphHandleDeath = LoadGraph("image/Player/Death.png");
+	assert(m_graphHandleDeath);
 
 	m_animIdle.Init(m_graphHandleIdle, kGraphWidth, kGraphHeight, kSingleAnimFrame, kIdleAnimNum);
 	m_animRun.Init(m_graphHandleRun, kGraphWidth, kGraphHeight,kSingleAnimFrame, kRunAnimNum);
 	m_animJump.Init(m_graphHandleJump, kGraphWidth, kGraphHeight, kSingleAnimFrame, kJumpAnimNum);
 	m_animShot.Init(m_graphHandleShot, kGraphWidth, kGraphHeight, kShotSingleAnimFrame, kShotAnimNum);
 	m_animDamage.Init(m_graphHandleDamage, kGraphWidth, kGraphHeight, kSingleAnimFrame, kDamageAnimNum);
+	m_animDeath.Init(m_graphHandleDeath, kGraphWidth, kGraphHeight, kDeathSingleAnimFrame, kDeathAnimNum);
 
 	//プレイヤーの位置の初期化
 	m_pos.X = kPlayerInitPosX;
@@ -120,40 +129,49 @@ void Player::Init()
 
 void Player::Update()
 {
-	/*Pad入力の取得*/
-	
+	if (m_playerState != Player::kDeath)
+	{
+		/*Pad入力の取得*/
+
 
 	/*現在の状態の取得*/
-	if (m_pos.Y >= 641) { m_isFloor = true; }//床の触れているかの判定
-	m_playerState = GetPlayerState();
+		if (m_pos.Y >= 640) { m_isFloor = true; }//床の触れているかの判定
+		m_playerState = GetPlayerState();
 
 
-	/*各状態での移動処理*/
-	//ダメージ状態の処理
-	if (m_playerState == PlayerState::kDamage) { --m_blinkFrameCount; }//無敵時間の更新
-	//ジャンプ
-	if (m_playerState != Player::kDamage) { JumpUpdate(); }//ダメージを受けていたらジャンプ出来ない
-	//if (jump) { Jump(); }
-	//if (run) { Run();  }
-	//if (damage) { Damage(); }
-	//if (shot) { Shot(); }
+		/*各状態での移動処理*/
+		//ダメージ状態の処理
+		if (m_playerState == PlayerState::kDamage) { --m_blinkFrameCount; }//無敵時間の更新
+		//ジャンプ
+		if (m_playerState != Player::kDamage) { JumpUpdate(); }//ダメージを受けていたらジャンプ出来ない
+		//if (jump) { Jump(); }
+		//if (run) { Run();  }
+		//if (damage) { Damage(); }
+		//if (shot) { Shot(); }
 
-	/*各状態での特殊処理*/
-	//弾丸
-	if (m_playerState != Player::kDamage) { BulletUpdate(); }//ダメージを受けていたら撃てない
-	//Shotの更新(既に撃っている弾は飛んでいく)
-	for (int i = 0; i < kShotAllNum; ++i) { m_shot[i]->Update(); }
+		/*各状態での特殊処理*/
+		//弾丸
+		if (m_playerState != Player::kDamage) { BulletUpdate(); }//ダメージを受けていたら撃てない
+		//Shotの更新(既に撃っている弾は飛んでいく)
+		for (int i = 0; i < kShotAllNum; ++i) { m_shot[i]->Update(); }
 
 
+		m_deathFrameCount = kDeathFrame;
+
+		/*速度の更新*/
+		PlayerVelocityUpdate();
+
+		/*位置の更新*/
+		m_pos += m_velocity;
+	}
+	if(m_playerState == Player::kDeath)
+	{
+		Death();
+		--m_deathFrameCount;
+	}
 	/*各状態でのアニメーション処理*/
-	//ステートによってアニメーションの変更
+		//ステートによってアニメーションの変更
 	AnimUpdate(m_playerState);
-
-	/*速度の更新*/
-	PlayerVelocityUpdate();
-
-	/*位置の更新*/
-	m_pos += m_velocity;
 }
 
 void Player::Draw()
@@ -161,7 +179,7 @@ void Player::Draw()
 	BulletDraw();
 
 	//点滅処理
-	if (m_blinkFrameCount / 2 % 2)
+	if (m_blinkFrameCount / 2 % 2 && m_playerState != Player::kDeath)
 	{
 		return;
 	}
@@ -269,6 +287,7 @@ void Player::AnimUpdate(PlayerState state)
 		m_animDamage.Update();
 		break;
 	case Player::kDeath:
+		m_animDeath.Update();
 		break;
 	default:
 		break;
@@ -292,9 +311,10 @@ void Player::AnimDraw(PlayerState state)
 		m_animShot.Play(m_pos, m_isDirLeft);
 		break;
 	case Player::kDamage:
-		m_animDamage.Play(m_pos,m_isDirLeft);
+		m_animDamage.Play(m_pos, m_isDirLeft);
 		break;
 	case Player::kDeath:
+		m_animDeath.Play(m_pos, m_isDirLeft);
 		break;
 	default:
 		break;
@@ -307,21 +327,26 @@ void Player::PlayerVelocityUpdate()
 	Vec2 lastVec;
 
 	//PADフラグチェック
-	bool IsRightPress = Pad::IsPress(PAD_INPUT_RIGHT);
-	bool IsLeftPress = Pad::IsPress(PAD_INPUT_LEFT);
+	bool isRightPress = Pad::IsPress(PAD_INPUT_RIGHT);
+	bool isLeftPress = Pad::IsPress(PAD_INPUT_LEFT);
+	bool isDamage = m_playerState == kDamage;
 
-	//右速度
-	if (IsRightPress)
+	if (!isDamage)
 	{
-		lastVec.X = kSpeed;
-		m_isDirLeft = false;
+		//右速度
+		if (isRightPress)
+		{
+			lastVec.X = kSpeed;
+			m_isDirLeft = false;
+		}
+		//左速度
+		if (isLeftPress)
+		{
+			lastVec.X = -kSpeed;
+			m_isDirLeft = true;
+		}
 	}
-	//左速度
-	if (IsLeftPress)
-	{
-		lastVec.X = -kSpeed;
-		m_isDirLeft = true;
-	}
+
 	//床に触れいてるならY方向の速度をゼロにする.
 	if (m_isFloor)
 	{
@@ -404,12 +429,22 @@ void Player::BulletDraw()
 	}
 }
 
+void Player::Death()
+{
+	//すでに死亡演出に入っている場合はreturn
+	if (m_deathFrameCount > 0)
+	{
+		return;
+	}
+}
+
 Player::PlayerState Player::GetPlayerState() const 
 {
 	//フラグ出し
 	bool isJump = (m_pos.Y != 640);//ジャンプしているか
 	bool isRun = (m_velocity.X != 0);//プレイヤーが移動しているか
 	bool isDamage = (m_blinkFrameCount > 0);//被弾しているか
+	bool isDeath = (m_hp <= 0);//HPが0か
 
 	//待機
 	if (!isRun && !isJump && !m_isShot && !isDamage) { return PlayerState::kIdle; }
@@ -420,7 +455,9 @@ Player::PlayerState Player::GetPlayerState() const
 	//Shot
 	if (m_isShot && !isDamage) { return PlayerState::kShot; }
 	//被弾
-	if (isDamage) { return PlayerState::kDamage; }
+	if (isDamage && !isDeath) { return PlayerState::kDamage; }
+	//死亡
+	if (isDeath) { return PlayerState::kDeath; }
 
 	return PlayerState::kIdle;
 }

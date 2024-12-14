@@ -36,6 +36,7 @@ void SceneGame::Update()
 	m_pEnemy->Update();
 	m_fade.Update();
 	m_collisionManager.Update(*m_pPlayer,*m_pEnemy);
+	hp = m_pPlayer->GetHp();
 }
 
 void SceneGame::Draw()
@@ -46,15 +47,17 @@ void SceneGame::Draw()
 	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
 	DrawFormatString(10, 30, 0xffffff, "HP:%d", m_pPlayer->GetHp());
-	DrawFormatString(10, 50, 0xffffff, "VelocityX:%.02f,VelocityY%.02f", m_pPlayer->GetVelocity().X, m_pPlayer->GetVelocity().Y);
-	DrawFormatString(10, 70, 0xffffff, "FrameCount:%d", m_pPlayer->GetBlinkFrameCount());
-	DrawFormatString(10, 90, 0xffffff, "isLeft:%d,isRigt:%d", m_collisionManager.GetIsHitLeft(), m_collisionManager.GetIsHitRight());
+	DrawFormatString(10, 50, 0xffffff, "PosX:%.01f, PosY:%.01f", m_pPlayer->GetPos().X, m_pPlayer->GetPos().Y);
+	DrawFormatString(10, 70, 0xffffff, "VelocityX:%.02f,VelocityY%.02f", m_pPlayer->GetVelocity().X, m_pPlayer->GetVelocity().Y);
+	DrawFormatString(10, 90, 0xffffff, "BlinkFrameCount:%d, DeathFrameCount:%d", m_pPlayer->GetBlinkFrameCount(), m_pPlayer->GetDeathFrameCount());
+	DrawFormatString(10, 110, 0xffffff, "isLeft:%d,isRigt:%d", m_collisionManager.GetIsHitLeft(), m_collisionManager.GetIsHitRight());
+	DrawFormatString(10, 130, 0xffffff, "PState:%d", m_pPlayer->GetPlayerState());
 	m_fade.Draw();
 }
 
 SceneManager::SceneKind SceneGame::SceneTransition()
 {
-	if (Pad::IsTrigger(PAD_INPUT_5))
+	if (m_pPlayer->GetPlayerState() == Player::kDeath && m_pPlayer->GetDeathFrameCount() < 0)
 	{
 		return SceneManager::SceneKind::kSceneTitle;
 	}

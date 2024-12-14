@@ -16,7 +16,7 @@ public:
 	//プレイヤーのステータス
 	enum PlayerState
 	{
-		kIdle,
+		kIdle = 1,
 		kRun,
 		kJump,
 		kShot,
@@ -53,11 +53,15 @@ public:
 	void BulletUpdate();
 	void BulletDraw();
 
+	//死亡した場合の処理
+	void Death();
+
 	bool GetDir()const { return m_isDirLeft; }
 	Vec2 GetPos()const { return m_pos; }
 	Vec2 GetVelocity()const { return m_velocity; }
 	int GetHp()const { return m_hp; }
 	int GetBlinkFrameCount()const { return m_blinkFrameCount; }
+	int GetDeathFrameCount()const { return m_deathFrameCount; }
 
 	//現在のPlayerの状態を取得する
 	PlayerState GetPlayerState()const;
@@ -74,6 +78,8 @@ private:
 	int m_hp;
 	//ダメージを受けた際の無敵と点滅用
 	int m_blinkFrameCount;
+	//死亡時のアニメーション用
+	int m_deathFrameCount;
 	//プレイヤーの状態
 	bool m_isJump;
 	bool m_isDamage;
@@ -98,6 +104,7 @@ private:
 	Animation m_animJump;
 	Animation m_animShot;
 	Animation m_animDamage;
+	Animation m_animDeath;
 
 	Shot* m_shot[kShotAllNum];
 };
