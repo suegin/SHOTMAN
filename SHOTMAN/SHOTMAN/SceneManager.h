@@ -2,6 +2,7 @@
 
 class SceneTitle;
 class SceneGame;
+class SceneGameOver;
 
 class SceneManager
 {
@@ -28,5 +29,6 @@ private:
 
 	SceneTitle* m_pSceneTitle;
 	SceneGame* m_pSceneGame;
+	SceneGameOver* m_pSceneGameOver;
 };
 

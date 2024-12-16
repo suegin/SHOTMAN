@@ -51,7 +51,7 @@ namespace
 	constexpr int kMaxHp = 5;
 
 	//死亡演出の時間
-	constexpr int kDeathFrame = 120;
+	constexpr int kDeathFrame = 119;
 
 	//プレイヤーの初期位置
 	constexpr int kPlayerInitPosX = 100;

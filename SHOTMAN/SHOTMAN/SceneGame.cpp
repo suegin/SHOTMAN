@@ -26,6 +26,7 @@ void SceneGame::Init()
 	m_pEnemy = new Enemy();
 	m_gameObjects.insert(m_pEnemy);
 
+	m_map.Init();
 	m_pPlayer->Init();
 	m_pEnemy->Init();
 }
@@ -53,13 +54,14 @@ void SceneGame::Draw()
 	DrawFormatString(10, 110, 0xffffff, "isLeft:%d,isRigt:%d", m_collisionManager.GetIsHitLeft(), m_collisionManager.GetIsHitRight());
 	DrawFormatString(10, 130, 0xffffff, "PState:%d", m_pPlayer->GetPlayerState());
 	m_fade.Draw();
+	m_map.Draw();
 }
 
 SceneManager::SceneKind SceneGame::SceneTransition()
 {
 	if (m_pPlayer->GetPlayerState() == Player::kDeath && m_pPlayer->GetDeathFrameCount() < 0)
 	{
-		return SceneManager::SceneKind::kSceneTitle;
+		return SceneManager::SceneKind::kSceneGameOver;
 	}
 
 	return SceneManager::SceneKind::kSceneGame;

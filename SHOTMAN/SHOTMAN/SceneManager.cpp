@@ -5,11 +5,13 @@
 
 #include "SceneTitle.h"
 #include "SceneGame.h"
+#include "SceneGameOver.h"
 
 SceneManager::SceneManager():
 	m_kind(kSceneGame),
 	m_pSceneTitle(nullptr),
-	m_pSceneGame(nullptr)
+	m_pSceneGame(nullptr),
+	m_pSceneGameOver(nullptr)
 {
 }
 
@@ -26,6 +28,12 @@ SceneManager::~SceneManager()
 		delete m_pSceneGame;
 		m_pSceneGame = nullptr;
 	}
+
+	if (m_pSceneGameOver != nullptr)
+	{
+		delete m_pSceneGameOver;
+		m_pSceneGameOver = nullptr;
+	}
 }
 
 void SceneManager::Init()
@@ -40,6 +48,9 @@ void SceneManager::Init()
 		m_pSceneGame = new SceneGame();
 		m_pSceneGame->Init();
 		break;
+	case SceneManager::kSceneGameOver:
+		m_pSceneGameOver = new SceneGameOver();
+		m_pSceneGameOver->Init();
 	case SceneManager::kSceneNum:
 	default:
 		break;
@@ -61,6 +72,10 @@ void SceneManager::Update()
 	case SceneManager::kSceneGame:
 		m_pSceneGame->Update();
 		nextKind = m_pSceneGame->SceneTransition();
+		break;
+	case SceneManager::kSceneGameOver:
+		m_pSceneGameOver->Update();
+		nextKind = m_pSceneGameOver->SceneTransition();
 		break;
 	case SceneManager::kSceneNum:
 	default:
@@ -84,6 +99,9 @@ void SceneManager::Draw()
 		break;
 	case SceneManager::kSceneGame:
 		m_pSceneGame->Draw();
+		break;
+	case SceneManager::kSceneGameOver:
+		m_pSceneGameOver->Draw();
 		break;
 	case SceneManager::kSceneNum:
 		break;
