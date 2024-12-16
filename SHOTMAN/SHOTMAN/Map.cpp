@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "DxLib.h"
+#include "game.h"
 
 
 Map::Map()
@@ -42,11 +43,14 @@ void Map::Init()
 			// .................
 			// 240 ..........255
 			// と番号が付くので、その番号×MapChipSize(32)が画像内の座標
-			int chipSideNum = MapGraphSize / kMapChipSize;  // 一片のマップチップ個数
-			int inGraphXIdx = (mapChip.GetChipNo() % chipSideNum); // 画像内の横インデックス
-			int inGraphYIdx = (mapChip.GetChipNo() / chipSideNum); // 画像内の縦インデックス
-			mapChip.SetPosInGraphX(inGraphXIdx * kMapChipSize);
-			mapChip.SetPosInGraphY(inGraphYIdx * kMapChipSize);
+			int chipSideNumX = MapGraphSizeX / kMapChipSize;  // 一片のマップチップ個数
+			int chipSideNumY = MapGraphSizeY / kMapChipSize;
+			int inGraphXIdxX = (mapChip.GetChipNo() % chipSideNumX); // 画像内の横インデックス
+			int inGraphYIdxY = (mapChip.GetChipNo() / chipSideNumY); // 画像内の縦インデックス
+			mapChip.SetPosInGraphX(inGraphXIdxX * kMapChipSize);
+			mapChip.SetPosInGraphY(inGraphYIdxY * kMapChipSize);
+
+			m_mapChips[wIndex][hIndex] = mapChip;
 		}
 	}
 }
@@ -66,11 +70,13 @@ void Map::Draw()
 			if (mapChip.GetChipNo() > 0)
 			{
 				auto leftTopX = static_cast<int>(mapChip.GetPos().X);
-				auto leftTopY = static_cast<int>(mapChip.GetPos().Y);
+				auto leftTopY = static_cast<int>(mapChip.GetPos().Y) - kMapChipSize * kMapHeight + Game::kScreenHeight;
 				DrawRectGraph(leftTopX, leftTopY,
 					mapChip.GetPosInGraphX(), mapChip.GetPosInGraphY(),
 					kMapChipSize, kMapChipSize,
 					m_graphHandle, true);
+
+
 			}
 		}
 	}

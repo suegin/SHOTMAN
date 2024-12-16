@@ -8,7 +8,8 @@ namespace
 	constexpr int kMapChipSize = 16;
 	constexpr int kMapWidth = 128;
 	constexpr int kMapHeight = 139;
-	const int MapGraphSize = 256;
+	const int MapGraphSizeX = 272;
+	const int MapGraphSizeY = 224;
 }
 
 class Map

@@ -43,17 +43,6 @@ void PlatinumLoader::Load(const TCHAR* filePath)
 		FileRead_read(layer.data(), layerDataSize, handle);
 	}
 
-	for (auto& map : mapData_)
-	{
-		for (auto& data : map)
-		{
-			if (data != 0)
-			{
-				printfDx("あ");
-			}
-		}
-	}
-
 	FileRead_close(handle);
 }
 
