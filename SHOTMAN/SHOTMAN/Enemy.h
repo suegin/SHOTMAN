@@ -1,8 +1,9 @@
 #pragma once
 #include "_base2DGameObject.h"
 #include "_baseEnemy.h"
+#include "Animation.h"
 
-class Enemy : public _base2DGameObject/*, public _baseEnemy*/
+class Enemy : public _baseEnemy
 {
 public:
 	Enemy();
@@ -22,5 +23,10 @@ public:
 
 private:
 	Vec2 m_velocity;
+	bool m_isLeft;
+
+	int m_graphHandle;
+
+	Animation m_anim;
 };
 

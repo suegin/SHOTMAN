@@ -43,10 +43,9 @@ void Map::Init()
 			// .................
 			// 240 ..........255
 			// と番号が付くので、その番号×MapChipSize(32)が画像内の座標
-			int chipSideNumX = MapGraphSizeX / kMapChipSize;  // 一片のマップチップ個数
-			int chipSideNumY = MapGraphSizeY / kMapChipSize;
-			int inGraphXIdxX = (mapChip.GetChipNo() % chipSideNumX); // 画像内の横インデックス
-			int inGraphYIdxY = (mapChip.GetChipNo() / chipSideNumY); // 画像内の縦インデックス
+			int chipSideNum = MapGraphSize / kMapChipSize;  // 一片のマップチップ個数
+			int inGraphXIdxX = (mapChip.GetChipNo() % chipSideNum); // 画像内の横インデックス
+			int inGraphYIdxY = (mapChip.GetChipNo() / chipSideNum); // 画像内の縦インデックス
 			mapChip.SetPosInGraphX(inGraphXIdxX * kMapChipSize);
 			mapChip.SetPosInGraphY(inGraphYIdxY * kMapChipSize);
 

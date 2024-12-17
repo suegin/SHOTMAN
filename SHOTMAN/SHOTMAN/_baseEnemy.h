@@ -14,6 +14,5 @@ public:
 private:
 	int m_hp;
 	int m_attack;
-	Vec2 m_pos{0.0f,0.0f};
 };
 

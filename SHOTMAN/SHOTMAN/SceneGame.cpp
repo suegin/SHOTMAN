@@ -44,6 +44,7 @@ void SceneGame::Draw()
 {
 	//”wŒi
 	DrawBox(0, 0, Game::kScreenWidth, Game::kScreenHeight, 0x00bfff, true);
+	m_map.Draw();
 	m_pEnemy->Draw();
 	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
@@ -54,7 +55,6 @@ void SceneGame::Draw()
 	DrawFormatString(10, 110, 0xffffff, "isLeft:%d,isRigt:%d", m_collisionManager.GetIsHitLeft(), m_collisionManager.GetIsHitRight());
 	DrawFormatString(10, 130, 0xffffff, "PState:%d", m_pPlayer->GetPlayerState());
 	m_fade.Draw();
-	m_map.Draw();
 }
 
 SceneManager::SceneKind SceneGame::SceneTransition()

@@ -2,6 +2,7 @@
 #include "Vec2.h"
 #include "DxLib.h"
 #include "game.h"
+#include <cassert>
 
 namespace
 {
@@ -12,9 +13,14 @@ namespace
 	//エネミーの初期位置
 	constexpr int kEnemyInitPosX = 640;
 	constexpr int kEnemyInitPosY = 620;
+
+	constexpr int kGrpahW = 46;
+	constexpr int kGraphH = 30;
 }
 
-Enemy::Enemy()
+Enemy::Enemy():
+	m_graphHandle(-1),
+	m_isLeft(false)
 {
 }
 
@@ -24,17 +30,23 @@ Enemy::~Enemy()
 
 void Enemy::Init()
 {
+	m_graphHandle = LoadGraph("image/Enemy/Enemy001.png");
+	assert(m_graphHandle != -1);
+
+	m_anim.Init(m_graphHandle, kGrpahW, kGraphH, 5, 7);
+
 	m_pos.X = kEnemyInitPosX;
 	m_pos.Y = kEnemyInitPosY;
 }
 
 void Enemy::Update()
 {
+	m_anim.Update();
 }
 
 void Enemy::Draw()
 {
-	DrawBox(m_pos.X - kHitBoxW*0.5, m_pos.Y - kHitBoxH, m_pos.X + kHitBoxW*0.5, m_pos.Y, 0xff0000, true);
+	m_anim.Play(m_pos, m_isLeft);
 }
 
 float Enemy::GetLeft()
