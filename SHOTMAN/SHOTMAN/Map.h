@@ -6,8 +6,8 @@
 namespace
 {
 	constexpr int kMapChipSize = 16;
-	constexpr int kMapWidth = 128;
-	constexpr int kMapHeight = 139;
+	constexpr int kMapWidth = 416;
+	constexpr int kMapHeight = 272;
 	const int MapGraphSize = 256;
 }
 
