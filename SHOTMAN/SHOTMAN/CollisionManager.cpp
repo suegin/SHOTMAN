@@ -2,7 +2,7 @@
 #include "DxLib.h"
 
 CollisionManager::CollisionManager() :
-	m_isCol(false),
+	m_isDamageCol(false),
 	m_isHitLeft(false),
 	m_isHitRight(false),
 	m_isHitTop(false),
@@ -21,10 +21,10 @@ void CollisionManager::Init()
 {
 }
 
-void CollisionManager::Update(Player& player, Enemy& enemy)
+void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
 {
 	//プレイヤーと敵の当たり判定
-	m_isCol = true;  //最初は一旦当たっている状態、ということにする
+	m_isDamageCol = true;  //最初は一旦当たっている状態、ということにする
 	m_isHitLeft = true;
 	m_isHitRight = true;
 	m_isHitTop = true;
@@ -35,33 +35,38 @@ void CollisionManager::Update(Player& player, Enemy& enemy)
 	{
 		//プレイヤーの左は敵の右と当たっていない
 		m_isHitLeft = false;
-		m_isCol = false;
+		m_isDamageCol = false;
 	}
 	if (player.GetTop() > enemy.GetBottom())
 	{
 		//プレイヤーの上は敵の下と当たっていない
 		m_isHitTop = false;
-		m_isCol = false;
+		m_isDamageCol = false;
 	}
 	if (player.GetRight() < enemy.GetLeft())
 	{
 		//プレイヤーの右は敵の左と当たっていない
 		m_isHitRight = false;
-		m_isCol = false;
+		m_isDamageCol = false;
 	}
 	if (player.GetBottom() < enemy.GetTop())
 	{
 		//プレイヤーの下は敵の上と当たっていない
 		m_isHitBottom = false;
-		m_isCol = false;
+		m_isDamageCol = false;
 	}
 
-	if (m_isCol)
+	if (m_isDamageCol)
 	{
 		player.OnDamage(m_isHitLeft,m_isHitRight, m_isLastHitLeft, m_isLastHitRight);
 	}
 	m_isLastHitLeft = m_isHitLeft;
 	m_isLastHitRight = m_isHitRight;
+}
+
+void CollisionManager::PlayerMapCollisionUpdate()
+{
+
 }
 
 void CollisionManager::Draw()

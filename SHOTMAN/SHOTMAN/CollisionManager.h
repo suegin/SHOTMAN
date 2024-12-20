@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include "Enemy.h"
+#include "Map.h"
 
 class Player;
 class Enemy;
@@ -14,14 +15,15 @@ public:
 	~CollisionManager();
 
 	void Init();
-	void Update(Player& player, Enemy& enemy);
+	void PlayerDamageCollisionUpdate(Player& player, Enemy& enemy);
+	void PlayerMapCollisionUpdate();
 	void Draw();
 
 	bool GetIsHitLeft()const { return m_isHitLeft; }
 	bool GetIsHitRight()const { return m_isHitRight; }
 
 private:
-	bool m_isCol;
+	bool m_isDamageCol;
 	bool m_isHitLeft;
 	bool m_isHitRight;
 	bool m_isHitTop;

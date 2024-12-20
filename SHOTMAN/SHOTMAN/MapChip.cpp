@@ -1,6 +1,10 @@
 #include "MapChip.h"
 
 MapChip::MapChip():
+	m_top(0),
+	m_bottom(0),
+	m_left(0),
+	m_right(0),
 	m_chipNo(0),
 	m_w(0.0f),
 	m_h(0.0f),
@@ -54,4 +58,24 @@ void MapChip::SetPosInGraphX(int posInGraphX)
 void MapChip::SetPosInGraphY(int posInGraphY)
 {
 	m_posInGraphY = posInGraphY;
+}
+
+void MapChip::SetTop(int top)
+{
+	m_top = top;
+}
+
+void MapChip::SetBottom(int bottom)
+{
+	m_bottom = bottom;
+}
+
+void MapChip::SetLeft(int left)
+{
+	m_left = left;
+}
+
+void MapChip::SetRight(int right)
+{
+	m_right = right;
 }

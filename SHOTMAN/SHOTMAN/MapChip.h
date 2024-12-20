@@ -23,8 +23,18 @@ public:
 	void SetPosInGraphY(int posInGraphY);
 	int GetPosInGraphX()const { return m_posInGraphX; }
 	int GetPosInGraphY()const { return m_posInGraphY; }
+	void SetTop(int top);
+	void SetBottom(int bottom);
+	void SetLeft(int left);
+	void SetRight(int right);
+
 
 private:
+	int m_top;
+	int m_bottom;
+	int m_left;
+	int m_right;
+
 	int m_chipNo;
 	float m_w, m_h;
 	Vec2 m_pos;

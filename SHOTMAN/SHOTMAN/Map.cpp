@@ -34,6 +34,8 @@ void Map::Init()
 			// ポジションの基準を左上に
 			mapChip.SetPos(m_vec2.VGet(wIndex * mapChip.GetMapChipW(), hIndex * mapChip.GetMapChipH()));
 
+			//mapChip.SetTop()
+
 			// 画像内での描画開始座標（左上）
 			// MapGraphSize=512 MapChipSize=32 512*512の画像
 			// 512 / 32 = 16なので、１行16個×16列の画像が並ぶ
