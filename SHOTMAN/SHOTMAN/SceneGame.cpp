@@ -2,8 +2,7 @@
 #include "DxLib.h"
 #include "Pad.h"
 #include "game.h"
-#include "Player.h"
-#include "Enemy.h"
+
 
 SceneGame::~SceneGame()
 {
@@ -36,7 +35,7 @@ void SceneGame::Update()
 	m_pPlayer->Update();
 	m_pEnemy->Update();
 	m_fade.Update();
-	m_collisionManager.Update(*m_pPlayer,*m_pEnemy);
+	m_collisionManager.Update();
 	hp = m_pPlayer->GetHp();
 }
 

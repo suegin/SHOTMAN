@@ -55,7 +55,7 @@ namespace
 
 	//プレイヤーの初期位置
 	constexpr int kPlayerInitPosX = 100;
-	constexpr int kPlayerInitPosY = 640;
+	constexpr int kPlayerInitPosY = 500;
 }
 
 Player::Player() :
@@ -135,7 +135,7 @@ void Player::Update()
 
 
 	/*現在の状態の取得*/
-		if (m_pos.Y >= 640) { m_isFloor = true; }//床の触れているかの判定
+		if (m_pos.Y >= 624) { m_isFloor = true; }//床の触れているかの判定
 		m_playerState = GetPlayerState();
 
 
@@ -351,7 +351,7 @@ void Player::PlayerVelocityUpdate()
 	if (m_isFloor)
 	{
 		lastVec.Y = 0.0f;
-		m_pos.Y = 640;//めり込み調整
+		m_pos.Y = 624;//めり込み調整
 		m_animJump.ResetAnimFrame();//ジャンプアニメーションを最初に戻す
 	}
 	//落下しているか
@@ -441,7 +441,7 @@ void Player::Death()
 Player::PlayerState Player::GetPlayerState() const 
 {
 	//フラグ出し
-	bool isJump = (m_pos.Y != 640);//ジャンプしているか
+	bool isJump = (m_pos.Y != 624);//ジャンプしているか
 	bool isRun = (m_velocity.X != 0);//プレイヤーが移動しているか
 	bool isDamage = (m_blinkFrameCount > 0);//被弾しているか
 	bool isDeath = (m_hp <= 0);//HPが0か

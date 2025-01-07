@@ -1,5 +1,10 @@
 #include "CollisionManager.h"
 #include "DxLib.h"
+#include "Vec2.h"
+
+#include "Player.h"
+#include "Enemy.h"
+#include "Map.h"
 
 CollisionManager::CollisionManager() :
 	m_isDamageCol(false),
@@ -21,7 +26,12 @@ void CollisionManager::Init()
 {
 }
 
-void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
+void CollisionManager::Update()
+{
+	PlayerDamageCollisionUpdate();
+}
+
+void CollisionManager::PlayerDamageCollisionUpdate()
 {
 	//プレイヤーと敵の当たり判定
 	m_isDamageCol = true;  //最初は一旦当たっている状態、ということにする
@@ -31,25 +41,25 @@ void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
 	m_isHitBottom = true;
 
 	//絶対に当たっていない判定をとる
-	if (player.GetLeft() > enemy.GetRight())
+	if (m_player.GetLeft() > m_enemy.GetRight())
 	{
 		//プレイヤーの左は敵の右と当たっていない
 		m_isHitLeft = false;
 		m_isDamageCol = false;
 	}
-	if (player.GetTop() > enemy.GetBottom())
+	if (m_player.GetTop() > m_enemy.GetBottom())
 	{
 		//プレイヤーの上は敵の下と当たっていない
 		m_isHitTop = false;
 		m_isDamageCol = false;
 	}
-	if (player.GetRight() < enemy.GetLeft())
+	if (m_player.GetRight() < m_enemy.GetLeft())
 	{
 		//プレイヤーの右は敵の左と当たっていない
 		m_isHitRight = false;
 		m_isDamageCol = false;
 	}
-	if (player.GetBottom() < enemy.GetTop())
+	if (m_player.GetBottom() < m_enemy.GetTop())
 	{
 		//プレイヤーの下は敵の上と当たっていない
 		m_isHitBottom = false;
@@ -58,13 +68,13 @@ void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
 
 	if (m_isDamageCol)
 	{
-		player.OnDamage(m_isHitLeft,m_isHitRight, m_isLastHitLeft, m_isLastHitRight);
+		m_player.OnDamage(m_isHitLeft,m_isHitRight, m_isLastHitLeft, m_isLastHitRight);
 	}
 	m_isLastHitLeft = m_isHitLeft;
 	m_isLastHitRight = m_isHitRight;
 }
 
-void CollisionManager::PlayerMapCollisionUpdate()
+void CollisionManager::PlayerMapCollisionUpdate(Map& map)
 {
 
 }

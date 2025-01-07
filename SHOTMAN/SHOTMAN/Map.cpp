@@ -3,7 +3,9 @@
 #include "game.h"
 
 
-Map::Map()
+Map::
+Map():
+	m_graphHandle(-1)
 {
 }
 
