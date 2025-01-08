@@ -6,7 +6,6 @@
 #include "SceneManager.h"
 #include "Fade.h"
 #include "CollisionManager.h"
-#include "Map.h"
 
 using namespace std;
 
@@ -31,8 +30,6 @@ private:
 	Enemy* m_pEnemy;
 	Fade m_fade;
 	CollisionManager m_collisionManager;
-
-	Map m_map;
 
 	int hp = 0;
 };

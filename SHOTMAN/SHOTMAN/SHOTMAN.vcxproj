@@ -149,10 +149,9 @@
     <ClCompile Include="FlyEnemy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="MapChip.cpp" />
     <ClCompile Include="Pad.cpp" />
-    <ClCompile Include="PlatinumLoader.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rect.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneGameOver.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -170,10 +169,9 @@
     <ClInclude Include="FlyEnemy.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="MapChip.h" />
     <ClInclude Include="Pad.h" />
-    <ClInclude Include="PlatinumLoader.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneGameOver.h" />
     <ClInclude Include="SceneManager.h" />

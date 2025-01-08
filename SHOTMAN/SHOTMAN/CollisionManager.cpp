@@ -4,7 +4,6 @@
 
 #include "Player.h"
 #include "Enemy.h"
-#include "Map.h"
 
 CollisionManager::CollisionManager() :
 	m_isDamageCol(false),

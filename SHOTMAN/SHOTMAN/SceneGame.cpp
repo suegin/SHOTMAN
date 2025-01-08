@@ -24,8 +24,6 @@ void SceneGame::Init()
 	m_gameObjects.insert(m_pPlayer);
 	m_pEnemy = new Enemy();
 	m_gameObjects.insert(m_pEnemy);
-
-	m_map.Init();
 	m_pPlayer->Init();
 	m_pEnemy->Init();
 }
@@ -43,7 +41,6 @@ void SceneGame::Draw()
 {
 	//”wŒi
 	DrawBox(0, 0, Game::kScreenWidth, Game::kScreenHeight, 0x00bfff, true);
-	m_map.Draw();
 	m_pEnemy->Draw();
 	m_pPlayer->Draw();
 	DrawFormatString(10, 10, 0xffffff, "SceneGame");
