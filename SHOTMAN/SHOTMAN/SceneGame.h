@@ -5,17 +5,18 @@
 #include <string>
 #include "SceneManager.h"
 #include "Fade.h"
-#include "CollisionManager.h"
+#include <memory>
 
 using namespace std;
 
 class Player;
 class Enemy;
+class CollisionManager;
 
 class SceneGame : public _sceneBase
 {
 public:
-	~SceneGame();
+	SceneGame();
 
 	/*ƒƒ“ƒoŠÖ”*/
 	void Init() override;
@@ -25,11 +26,11 @@ public:
 	SceneManager::SceneKind SceneTransition();
 
 private:
-	set<_base2DGameObject*> m_gameObjects;
-	Player* m_pPlayer;
-	Enemy* m_pEnemy;
+	set<shared_ptr<_base2DGameObject>> m_gameObjects;
+	shared_ptr<Player> m_pPlayer;
+	shared_ptr<Enemy> m_pEnemy;
 	Fade m_fade;
-	CollisionManager m_collisionManager;
+	shared_ptr<CollisionManager> m_pCollisionManager;
 
 	int hp = 0;
 };

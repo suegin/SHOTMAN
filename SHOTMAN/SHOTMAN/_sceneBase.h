@@ -1,4 +1,8 @@
 #pragma once
+
+class Player;
+class Enemy;
+
 /// <summary>
 /// 全てのシーンの基底クラス
 /// </summary>

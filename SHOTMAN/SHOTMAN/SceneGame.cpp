@@ -2,27 +2,23 @@
 #include "DxLib.h"
 #include "Pad.h"
 #include "game.h"
+#include "CollisionManager.h"
 
+#include "Player.h"
+#include "Enemy.h"
 
-SceneGame::~SceneGame()
+using namespace std;
+
+SceneGame::SceneGame()
 {
-	if (m_pPlayer != nullptr)
-	{
-		delete m_pPlayer;
-		m_pPlayer = nullptr;
-	}
-	if (m_pEnemy != nullptr)
-	{
-		delete m_pEnemy;
-		m_pEnemy = nullptr;
-	}
+	m_pPlayer = make_shared<Player>();
+	m_pEnemy = make_shared<Enemy>();
+	m_pCollisionManager = make_shared<CollisionManager>();
 }
 
 void SceneGame::Init()
 {
-	m_pPlayer = new Player();
 	m_gameObjects.insert(m_pPlayer);
-	m_pEnemy = new Enemy();
 	m_gameObjects.insert(m_pEnemy);
 	m_pPlayer->Init();
 	m_pEnemy->Init();
@@ -33,7 +29,7 @@ void SceneGame::Update()
 	m_pPlayer->Update();
 	m_pEnemy->Update();
 	m_fade.Update();
-	m_collisionManager.Update();
+	m_pCollisionManager->Update(*m_pPlayer, *m_pEnemy);
 	hp = m_pPlayer->GetHp();
 }
 
@@ -48,8 +44,9 @@ void SceneGame::Draw()
 	DrawFormatString(10, 50, 0xffffff, "PosX:%.01f, PosY:%.01f", m_pPlayer->GetPos().X, m_pPlayer->GetPos().Y);
 	DrawFormatString(10, 70, 0xffffff, "VelocityX:%.02f,VelocityY%.02f", m_pPlayer->GetVelocity().X, m_pPlayer->GetVelocity().Y);
 	DrawFormatString(10, 90, 0xffffff, "BlinkFrameCount:%d, DeathFrameCount:%d", m_pPlayer->GetBlinkFrameCount(), m_pPlayer->GetDeathFrameCount());
-	DrawFormatString(10, 110, 0xffffff, "isLeft:%d,isRigt:%d", m_collisionManager.GetIsHitLeft(), m_collisionManager.GetIsHitRight());
+	DrawFormatString(10, 110, 0xffffff, "isLeft:%d,isRigt:%d", m_pCollisionManager->GetIsHitLeft(), m_pCollisionManager->GetIsHitRight());
 	DrawFormatString(10, 130, 0xffffff, "PState:%d", m_pPlayer->GetPlayerState());
+	DrawFormatString(10, 150, 0xffffff, "PRightPos:%.01f,ELeftPos:%.01f", m_pPlayer->GetRight(), m_pEnemy->GetLeft());
 	m_fade.Draw();
 }
 

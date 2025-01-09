@@ -1,8 +1,14 @@
 #pragma once
+#include <memory>
+
+using namespace std;
 
 class SceneTitle;
 class SceneGame;
 class SceneGameOver;
+
+class Player;
+class Enemy;
 
 class SceneManager
 {
@@ -27,8 +33,8 @@ public:
 private:
 	SceneKind m_kind;
 
-	SceneTitle* m_pSceneTitle;
-	SceneGame* m_pSceneGame;
-	SceneGameOver* m_pSceneGameOver;
+	shared_ptr<SceneTitle> m_pSceneTitle;
+	shared_ptr<SceneGame> m_pSceneGame;
+	shared_ptr<SceneGameOver> m_pSceneGameOver;
 };
 

@@ -2,6 +2,8 @@
 #include "game.h"
 
 #include "SceneManager.h"
+#include "Player.h"
+#include "Enemy.h"
 
 // ƒvƒƒOƒ‰ƒ€‚Í WinMain ‚©‚çn‚Ü‚è‚Ü‚·
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)

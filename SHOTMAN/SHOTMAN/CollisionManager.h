@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Player.h"
-#include "Enemy.h"
+#include <memory>
+
+using namespace std;
 
 class Vec2;
 class Player;
@@ -12,13 +13,10 @@ class CollisionManager
 {
 public:
 	CollisionManager();
-	~CollisionManager();
 
-	void Init();
-	void Update();
-	void PlayerDamageCollisionUpdate();
+	void Update(Player& player, Enemy& enemy);
+	void PlayerDamageCollisionUpdate(Player& player, Enemy& enemy);
 	void PlayerMapCollisionUpdate(Map& map);
-	void Draw();
 
 	bool GetIsHitLeft()const { return m_isHitLeft; }
 	bool GetIsHitRight()const { return m_isHitRight; }
@@ -31,8 +29,5 @@ private:
 	bool m_isHitBottom;
 	bool m_isLastHitLeft;
 	bool m_isLastHitRight;
-
-	Player m_player;
-	Enemy m_enemy;
 };
 
