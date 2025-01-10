@@ -1,7 +1,2 @@
-﻿  main.cpp
-  SceneGame.cpp
-  SceneGameOver.cpp
-  SceneManager.cpp
-  SceneTitle.cpp
-  コードを生成中...
+﻿  Map.cpp
   SHOTMAN.vcxproj -> C:\Users\fko2447006\Documents\GitHub\SHOTMAN\SHOTMAN\SHOTMAN\x64\Debug\SHOTMAN.exe
