@@ -235,6 +235,16 @@ float Player::GetBottom() const
 	return m_pos.Y;
 }
 
+Rect Player::GetRect()
+{
+	Rect rect;
+	rect.top = GetTop();
+	rect.bottom = GetBottom();
+	rect.left = GetLeft();
+	rect.right = GetRight();
+	return rect;
+}
+
 void Player::OnDamage(bool isHitLeft, bool isHitRight, bool isLastHitLeft, bool isLastHitRight)
 {
 	//Šù‚É”í’e‚µ‚Ä‚¢‚éê‡‚Íreturn

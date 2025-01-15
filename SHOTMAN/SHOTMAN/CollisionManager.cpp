@@ -1,7 +1,9 @@
 #include "CollisionManager.h"
 #include "DxLib.h"
 #include "Vec2.h"
+#include "Rect.h"
 
+#include "Map.h"
 #include "Player.h"
 #include "Enemy.h"
 
@@ -19,9 +21,10 @@ CollisionManager::CollisionManager() :
 {
 }
 
-void CollisionManager::Update(Player& player, Enemy& enemy)
+void CollisionManager::Update(Player& player, Enemy& enemy, Map& map)
 {
 	PlayerDamageCollisionUpdate(player, enemy);
+	PlayerMapCollisionUpdate(player, map);
 }
 
 void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
@@ -67,7 +70,11 @@ void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
 	m_isLastHitRight = m_isHitRight;
 }
 
-void CollisionManager::PlayerMapCollisionUpdate(Map& map)
+void CollisionManager::PlayerMapCollisionUpdate(Player& player, Map& map)
 {
-
+	Rect chipRect;
+	if (map.IsCol(player.GetRect(), chipRect))
+	{
+		
+	}
 }

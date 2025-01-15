@@ -4,6 +4,7 @@
 #include "Vec2.h"
 #include "Animation.h"
 #include "Shot.h"
+#include "Rect.h"
 
 namespace
 {
@@ -36,6 +37,8 @@ public:
 	float GetTop() const;
 	float GetRight() const;
 	float GetBottom() const;
+
+	Rect GetRect();
 
 	//プレイヤーがダメージを受けるオブジェクトにぶつかった
 	void OnDamage(bool isHitLeft, bool isHitRight, bool isLastHitLeft, bool isLastHitRight);

@@ -9,6 +9,7 @@
 
 using namespace std;
 
+class Map;
 class Player;
 class Enemy;
 class CollisionManager;
@@ -27,6 +28,7 @@ public:
 
 private:
 	set<shared_ptr<_base2DGameObject>> m_gameObjects;
+	shared_ptr<Map> m_pMap;
 	shared_ptr<Player> m_pPlayer;
 	shared_ptr<Enemy> m_pEnemy;
 	Fade m_fade;
