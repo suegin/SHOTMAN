@@ -331,6 +331,11 @@ void Player::AnimDraw(PlayerState state)
 	}
 }
 
+void Player::IsMapCollision(bool isHitLeft, bool isHitRight, bool isHitTop, bool isHitBottom)
+{	
+	
+}
+
 void Player::PlayerVelocityUpdate()
 {
 	//ç≈èIìIÇ»ë¨ìx
@@ -340,6 +345,8 @@ void Player::PlayerVelocityUpdate()
 	bool isRightPress = Pad::IsPress(PAD_INPUT_RIGHT);
 	bool isLeftPress = Pad::IsPress(PAD_INPUT_LEFT);
 	bool isDamage = m_playerState == kDamage;
+
+
 
 	if (!isDamage)
 	{

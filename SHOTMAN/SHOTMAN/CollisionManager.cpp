@@ -73,8 +73,35 @@ void CollisionManager::PlayerDamageCollisionUpdate(Player& player, Enemy& enemy)
 void CollisionManager::PlayerMapCollisionUpdate(Player& player, Map& map)
 {
 	Rect chipRect;
+	bool isHitLeft = false;
+	bool isHitRight = false;
+	bool isHitTop = false;
+	bool isHitBottom = false;
+
 	if (map.IsCol(player.GetRect(), chipRect))
 	{
-		
+		//めり込み対策で1ドットずらしたポジションで取る
+		if (player.GetLeft()+1.0f <= chipRect.right)
+		{
+			//プレイヤーの左が壁と接触している
+			isHitLeft = true;
+		}
+		if (player.GetTop()-1.0f <= chipRect.bottom)
+		{
+			//プレイヤーの上が天井と接触している
+			isHitTop = true;
+		}
+		if (player.GetRight()+1.0 >= chipRect.left)
+		{
+			//プレイヤーの右が壁と接触している
+			isHitRight = true;
+		}
+		if (player.GetBottom()-1.0f >= chipRect.top)
+		{
+			//プレイヤーの下が床と接触している
+			isHitBottom = true;
+		}
+
+		player.IsMapCollision(isHitLeft, isHitRight, isHitTop, isHitBottom);
 	}
 }

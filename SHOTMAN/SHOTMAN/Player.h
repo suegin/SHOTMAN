@@ -48,6 +48,9 @@ public:
 	//PlayerのStateにより再生するアニメーションを変更
 	void AnimDraw(PlayerState state);
 
+	//マップの当たり判定の処理
+	void IsMapCollision(bool isHitLeft, bool isHitRight, bool isHitTop, bool isHitBottom);
+
 	//プレイヤーの速度の更新(PAD入力から速度の作成)
 	void PlayerVelocityUpdate();
 	//ジャンプの処理(PAD入力から)
