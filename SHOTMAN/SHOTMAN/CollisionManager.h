@@ -15,7 +15,6 @@ public:
 
 	void Update(Player& player, Enemy& enemy, Map& map);
 	void PlayerDamageCollisionUpdate(Player& player, Enemy& enemy);
-	void PlayerMapCollisionUpdate(Player& player, Map& map);
 
 	bool GetIsHitLeft()const { return m_isHitLeft; }
 	bool GetIsHitRight()const { return m_isHitRight; }

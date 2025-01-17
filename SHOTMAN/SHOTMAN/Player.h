@@ -5,6 +5,9 @@
 #include "Animation.h"
 #include "Shot.h"
 #include "Rect.h"
+#include <memory>
+
+class Map;
 
 namespace
 {
@@ -49,7 +52,7 @@ public:
 	void AnimDraw(PlayerState state);
 
 	//マップの当たり判定の処理
-	void IsMapCollision(bool isHitLeft, bool isHitRight, bool isHitTop, bool isHitBottom);
+	void MapCollisionUpdate();
 
 	//プレイヤーの速度の更新(PAD入力から速度の作成)
 	void PlayerVelocityUpdate();
@@ -113,5 +116,7 @@ private:
 	Animation m_animDeath;
 
 	Shot* m_shot[kShotAllNum];
+
+	std::shared_ptr<Map> m_pMap;
 };
 

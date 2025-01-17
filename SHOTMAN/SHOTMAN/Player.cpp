@@ -5,6 +5,7 @@
 #include "Pad.h"
 #include "Shot.h"
 #include "CollisionManager.h"
+#include "Map.h"
 
 namespace
 {
@@ -81,6 +82,7 @@ Player::Player() :
 	{
 		shot = new Shot();
 	}
+	m_pMap = make_shared<Map>();
 }
 
 Player::~Player()
@@ -164,11 +166,15 @@ void Player::Update()
 		/*位置の更新*/
 		m_pos += m_velocity;
 	}
+
+	MapCollisionUpdate();
+
 	if(m_playerState == Player::kDeath)
 	{
 		Death();
 		--m_deathFrameCount;
 	}
+
 	/*各状態でのアニメーション処理*/
 		//ステートによってアニメーションの変更
 	AnimUpdate(m_playerState);
@@ -331,9 +337,40 @@ void Player::AnimDraw(PlayerState state)
 	}
 }
 
-void Player::IsMapCollision(bool isHitLeft, bool isHitRight, bool isHitTop, bool isHitBottom)
+void Player::MapCollisionUpdate()
 {	
-	
+	if (m_isJump)
+	{
+		Rect chipRect;
+		if (m_pMap->IsCol(GetRect(), chipRect))
+		{
+			//横からぶつかった場合の処理
+			if (m_velocity.X > 0.0f)//プレイヤーが右方向に移動している
+			{
+				m_pos.X = chipRect.left - kHitBoxW * 0.5 - 1; //マップチップの左側ちょうどぶつからない位置に補正
+			}
+			else if (m_velocity.X < 0.0f)
+			{
+				m_pos.X = chipRect.right + kHitBoxW * 0.5 + 1; //マップチップの右側ちょうどぶつからない位置に補正
+			}
+		}
+	}
+	else
+	{
+		Rect chipRect;
+		if (m_pMap->IsCol(GetRect(), chipRect))
+		{
+			//横からぶつかった場合の処理
+			if (m_velocity.X > 0.0f)//プレイヤーが右方向に移動している
+			{
+				m_pos.X = chipRect.left - kHitBoxW * 0.5; //マップチップの左側ちょうどぶつからない位置に補正
+			}
+			else if (m_velocity.X < 0.0f)
+			{
+				m_pos.X = chipRect.right + kHitBoxW * 0.5; //マップチップの右側ちょうどぶつからない位置に補正
+			}
+		}
+	}
 }
 
 void Player::PlayerVelocityUpdate()
